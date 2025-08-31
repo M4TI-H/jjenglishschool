@@ -1,43 +1,67 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref } from "vue";
 
 const isMenuOpened = ref<boolean>(false);
 
 function toggleMenu() {
-  isMenuOpened.value = !isMenuOpened.value
+  isMenuOpened.value = !isMenuOpened.value;
 }
 </script>
 
 <template>
-  <div class="fixed md:hidden bottom-5 right-5 flex flex-col items-end gap-2">
-    <div v-if="isMenuOpened" class="flex flex-col mr-8 bg-[#3C3D3E] rounded-l-2xl rounded-tr-2xl">
-      <button class="w-48 h-18 flex justify-evenly items-center active:bg-[#28292A] rounded-t-2xl hover:cursor-pointer 
-        text-[#FBFFF1] active:text-[#FEAD34] hover:bg-[#28292A] font-semibold text-lg"
+  <header
+    class="w-full h-16 sticky md:hidden flex justify-between pr-2 items-center bg-[#0e121e] z-30"
+  >
+    <img
+      @click="navigateTo('/')"
+      class="h-full w-18"
+      src="../public/logo.jpeg"
+    />
+    <button
+      @click="toggleMenu"
+      class="size-10 rounded-full active:bg-[#07080E]"
+    >
+      <i class="pi pi-bars text-white"></i>
+    </button>
+
+    <div
+      v-show="isMenuOpened"
+      class="absolute top-full left-0 w-full h-auto flex flex-col items-center bg-[#0e121e]/90 z-50 pointer-events-auto"
+    >
+      <button
+        @click="navigateTo('/oferta')"
+        class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e]"
       >
-        <i class="pi pi-home text-xl"></i>
-        <span class="w-28">Oferta</span>
+        Oferta
       </button>
-      <button class="w-48 h-18 flex justify-evenly items-center active:bg-[#28292A] hover:cursor-pointer 
-        text-[#FBFFF1] active:text-[#FEAD34] hover:bg-[#28292A] font-semibold text-lg"
+
+      <button
+        @click="navigateTo('/#content')"
+        class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e]"
       >
-        <i class="pi pi-calendar text-xl"></i>
-        <span class="w-28">Umówmy się</span>
+        O mnie
       </button>
-      <button class="w-48 h-18 flex justify-evenly items-center active:bg-[#28292A] rounded-bl-2xl hover:cursor-pointer 
-        text-[#FBFFF1] active:text-[#FEAD34] hover:bg-[#28292A] font-semibold text-lg"
+
+      <button
+        @click="navigateTo('/kontakt')"
+        class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e]"
       >
-        <i class="pi pi-phone text-xl"></i>
-        <span class="w-28">Kontakt</span>
+        Kontakt
       </button>
+
+      <div class="min-h-16 py-2">
+        <button
+          @click="navigateTo('/umowsie')"
+          class="w-44 lg:text-md h-10 bg-[#DECFA7] rounded-lg font-semibold hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
+        >
+          Zapisz się na zajęcia
+        </button>
+      </div>
     </div>
-
-    <button @click="toggleMenu"
-      class="flex size-[3rem] items-center justify-center rounded-full bg-[#FEAD34] active:bg-[#FEAD34]/70">
-      <i class="pi pi-bars text-3xl text-[#000814] "></i>
-    </button>
-
-    <button class="flex size-[3rem] items-center justify-center rounded-full bg-[#FEAD34] active:bg-[#FEAD34]/70">
-      <i class="pi pi-arrow-up text-xl text-[#000814] "></i>
-    </button>
-  </div>
+    <div
+      v-show="isMenuOpened"
+      class="absolute top-0 left-0 w-full h-screen z-40"
+      @click="isMenuOpened = false"
+    ></div>
+  </header>
 </template>

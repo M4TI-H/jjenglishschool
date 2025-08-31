@@ -1,17 +1,39 @@
-<script setup lang="ts">
-
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <div class="hidden md:flex fixed min-w-[32rem] max-w-[80%] w-full h-24 bg-[#000814] rounded-2xl">
-    <div class="w-[10%] h-full flex items-center px-10">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Flag_of_the_United_Kingdom.png" class="h-20 min-w-20"/>
+  <header
+    class="hidden md:flex sticky w-full justify-between items-center h-24 bg-[#0e121e] px-8"
+  >
+    <div class="h-full flex items-center gap-16">
+      <img
+        @click="navigateTo('/')"
+        src="../public/logo.jpeg"
+        class="w-22 hover:cursor-pointer"
+      />
+
+      <a
+        @click="navigateTo('/oferta')"
+        class="w-[4rem] lg:w-[8rem] text-[#DECFA7] text-sm lg:text-lg font-semibold hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A] text-center"
+        >Oferta</a
+      >
+
+      <a
+        @click="navigateTo('/#content')"
+        class="w-[7rem] lg:w-[8rem] text-[#DECFA7] text-sm lg:text-lg font-semibold hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A] text-center"
+        >O mnie</a
+      >
+
+      <a
+        @click="navigateTo('/kontakt')"
+        class="w-[4rem] lg:w-[8rem] text-[#DECFA7] text-sm lg:text-lg font-semibold hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A] text-center"
+        >Kontakt</a
+      >
     </div>
-    <div class="w-[90%] h-full flex items-center justify-end gap-16">
-      <a class="w-[6rem] text-[#FBFFF1] text-xl hover:cursor-pointer hover:text-[#FEAD34] active:text-[#FEAD34]">Oferta</a>
-      <a class="w-[8rem] text-[#FBFFF1] text-xl hover:cursor-pointer hover:text-[#FEAD34] active:text-[#FEAD34]">Umówmy się</a>
-      <a class="w-[7rem] text-[#FBFFF1] text-xl hover:cursor-pointer hover:text-[#FEAD34] active:text-[#FEAD34]">Kontakt</a>
-    </div>
-    
-  </div>
+    <button
+      @click="navigateTo('/umowsie')"
+      class="min-w-[10em] lg:w-[12rem] lg:text-md h-12 bg-[#DECFA7] rounded-lg font-semibold hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
+    >
+      Umów się na zajęcia
+    </button>
+  </header>
 </template>
