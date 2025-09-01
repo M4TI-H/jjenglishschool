@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { PanelContactSocialModal } from "#components";
-
 const contactData = {
   name_surname: "Jan Kowalski",
   email: "example.english@email.com",
@@ -21,6 +19,11 @@ const displaySocialDataForm = ref<boolean>(false);
 const toggleDisplaySocial = () => {
   displaySocialDataForm.value = !displaySocialDataForm.value;
 };
+
+const displaySocialDescriptionForm = ref<boolean>(false);
+const toggleDisplayDescription = () => {
+  displaySocialDescriptionForm.value = !displaySocialDescriptionForm.value;
+};
 </script>
 
 <template>
@@ -35,6 +38,12 @@ const toggleDisplaySocial = () => {
       v-if="displaySocialDataForm"
       :data="contactData"
       @close="toggleDisplaySocial"
+    />
+
+    <PanelContactDescriptionModal
+      v-if="displaySocialDescriptionForm"
+      :data="contactData"
+      @close="toggleDisplayDescription"
     />
 
     <h2 class="text-2xl font-semibold">Twoje dane kontaktowe</h2>
@@ -139,6 +148,24 @@ const toggleDisplaySocial = () => {
           Edytuj sekcję
         </button>
       </div>
+    </div>
+    <div
+      class="relative w-full max-w-[42rem] flex flex-col gap-2 p-4 text-center md:text-start md:bg-[#D9D9D9] md:rounded-lg"
+    >
+      <h3 class="text-xl font-semibold text-[#444]">Informacja do kontaktów</h3>
+      <p>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin faucibus
+        auctor velit, tempus lobortis purus ultricies lacinia. In tincidunt
+        ligula vel sem aliquet aliquet eget sit amet turpis. Nullam gravida
+        tortor lectus, a feugiat velit vestibulum vitae. Aenean id diam sed mi
+        finibus blandit vitae a nunc.
+      </p>
+      <button
+        @click="toggleDisplayDescription"
+        class="w-[10rem] h-[2.5rem] text-[#444] font-semibold mt-4 border-2 border-[#444] rounded-lg self-end active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
+      >
+        Edytuj tekst
+      </button>
     </div>
   </section>
 </template>

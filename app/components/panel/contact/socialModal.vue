@@ -13,7 +13,7 @@ const { data } = defineProps<{
     class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#000]/70 z-30"
   >
     <div
-      class="w-[90%] max-w-[24rem] flex flex-col items-center p-4 gap-4 md:gap-8 bg-[#D9D9D9] rounded-xl pb-8 z-40"
+      class="w-[90%] max-w-[24rem] max-h-[36rem] flex flex-col items-center p-4 gap-4 bg-[#D9D9D9] rounded-xl pb-8 z-40 overflow-y-auto"
     >
       <h2 class="text-xl font-semibold">Zmiana danych kontaktowych</h2>
       <div class="w-full flex flex-col gap-1">
@@ -25,6 +25,11 @@ const { data } = defineProps<{
           type="text"
           :value="data.facebook"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+        />
+        <input
+          type="text"
+          placeholder="URL"
+          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
         />
       </div>
 
@@ -38,6 +43,11 @@ const { data } = defineProps<{
           :value="data.instagram"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
         />
+        <input
+          type="text"
+          placeholder="URL"
+          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
+        />
       </div>
 
       <div class="w-full flex flex-col gap-1">
@@ -49,6 +59,11 @@ const { data } = defineProps<{
           type="text"
           :value="data.linkedin"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+        />
+        <input
+          type="text"
+          placeholder="URL"
+          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
         />
       </div>
 
@@ -62,6 +77,11 @@ const { data } = defineProps<{
           :value="data.youtube"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
         />
+        <input
+          type="text"
+          placeholder="URL"
+          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
+        />
       </div>
 
       <div class="w-full flex flex-col gap-1">
@@ -73,6 +93,11 @@ const { data } = defineProps<{
           type="text"
           :value="data.twitter"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+        />
+        <input
+          type="text"
+          placeholder="URL"
+          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
         />
       </div>
 

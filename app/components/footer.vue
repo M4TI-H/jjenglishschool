@@ -1,4 +1,6 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { NuxtLink } from "#components";
+</script>
 
 <template>
   <footer
@@ -7,21 +9,25 @@
     <div
       class="w-[50%] m:w-[50%] h-full flex flex-col items-start md:items-center gap-2"
     >
-      <a
+      <NuxtLink
+        to="/"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Strona główna</a
+        >Strona główna</NuxtLink
       >
-      <a
+      <NuxtLink
+        to="/oferta"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Oferta</a
+        >Oferta</NuxtLink
       >
-      <a
+      <NuxtLink
+        to="/kontakt"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Kontakt</a
+        >Kontakt</NuxtLink
       >
-      <a
+      <NuxtLink
+        to="/umowsie"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Umów się</a
+        >Umów się</NuxtLink
       >
     </div>
     <div
@@ -42,21 +48,21 @@
       </span>
 
       <span class="flex items-center gap-8">
-        <button class="hover:cursor-pointer">
+        <NuxtLink to="https://www.facebook.com/" class="hover:cursor-pointer">
           <i
-            class="pi pi-facebook text-2xl text-[#273153] hover:text-[#485B99]"
+            class="pi pi-facebook text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]"
           />
-        </button>
-        <button class="hover:cursor-pointer">
+        </NuxtLink>
+        <NuxtLink to="https://www.instagram.com/" class="hover:cursor-pointer">
           <i
-            class="pi pi-instagram text-2xl text-[#273153] hover:text-[#485B99]"
+            class="pi pi-instagram text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]"
           />
-        </button>
-        <button class="hover:cursor-pointer">
+        </NuxtLink>
+        <NuxtLink to="https://www.linkedin.com/" class="hover:cursor-pointer">
           <i
-            class="pi pi-linkedin text-2xl text-[#273153] hover:text-[#485B99]"
+            class="pi pi-linkedin text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]"
           />
-        </button>
+        </NuxtLink>
       </span>
     </div>
   </footer>

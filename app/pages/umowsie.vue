@@ -12,7 +12,7 @@ function toggleForm(type: string) {
     showNewStudent.value = !showNewStudent.value;
     showRegularStudent.value = false;
   }
-  navigateTo("#form");
+  navigateTo("/umowsie#form");
 }
 </script>
 

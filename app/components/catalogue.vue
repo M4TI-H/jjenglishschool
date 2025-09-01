@@ -31,11 +31,11 @@ const oferty = [
         <p class="text-lg text-[#DECFA7] font-semibold">I więcej...</p>
       </div>
     </div>
-    <button
-      @click="navigateTo('/oferta')"
-      class="min-w-[10em] lg:w-[12rem] lg:text-md h-12 bg-[#DECFA7] rounded-lg font-semibold hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
+    <NuxtLink
+      to="/oferta"
+      class="flex items-center justify-center min-w-[10em] lg:w-[12rem] lg:text-md h-12 bg-[#DECFA7] rounded-lg font-semibold hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
     >
       Poznaj szczegóły
-    </button>
+    </NuxtLink>
   </section>
 </template>

@@ -125,7 +125,7 @@ const toggleActive = () => {};
     <div class="w-[90%] max-h-[36rem] flex flex-col overflow-y-auto gap-4">
       <div
         v-for="oferta in oferty"
-        class="relative w-full bg-[#d9d9d9] flex flex-col items-start p-2 rounded-lg"
+        class="relative w-full bg-[#d9d9d9] flex flex-col items-start p-2 pb-8 md:pb-2 rounded-lg"
       >
         <span class="flex items-center gap-1">
           <i class="pi pi-tag text-sm text-[#444]"></i>

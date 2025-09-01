@@ -11,8 +11,7 @@
     <MainDescriptionContent />
 
     <section class="w-full h-72 text-center">Tu będzie mapka</section>
-    <CustomContent id="content" />
+    <CustomContent id="omnie" />
     <Catalogue id="oferta" />
-    <Contacts id="kontakt" />
   </main>
 </template>
