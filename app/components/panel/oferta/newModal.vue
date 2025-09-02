@@ -2,10 +2,6 @@
 const emit = defineEmits<{
   (e: "close"): void;
 }>();
-
-const { data } = defineProps<{
-  data: any;
-}>();
 </script>
 
 <template>
@@ -15,42 +11,53 @@ const { data } = defineProps<{
     <div
       class="w-[90%] max-w-[24rem] flex flex-col items-center p-4 gap-4 md:gap-8 bg-[#D9D9D9] rounded-xl pb-8 z-40"
     >
-      <p class="text-xl">Zmiana danych kontaktowych</p>
+      <p class="text-xl">Nowa oferta</p>
       <div class="w-full flex flex-col gap-1">
         <span class="flex items-center gap-2">
-          <i class="pi pi-user md:text-lg text-[#777]"></i>
-          <p class="md:text-lg text-[#777]">Imię i nazwisko</p>
+          <i class="pi pi-tag text-lg text-[#777]"></i>
+          <p class="text-lg text-[#777]">Nazwa oferty</p>
         </span>
         <input
           type="text"
-          :value="data.name_surname"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
         />
       </div>
 
       <div class="w-full flex flex-col gap-1">
         <span class="flex items-center gap-2">
-          <i class="pi pi-phone md:text-lg text-[#777]"></i>
-          <p class="md:text-lg text-[#777]">Numer telefonu</p>
+          <i class="pi pi-align-left text-lg text-[#777]"></i>
+          <p class="text-lg text-[#777]">Opis</p>
         </span>
-        <input
+        <textarea
           type="text"
-          :value="data.phone_number"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          class="bg-[#eee] w-full h-[6rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] p-2 font-semibold resize-none"
         />
       </div>
 
       <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-envelope md:text-lg text-[#777]"></i>
-          <p class="md:text-lg text-[#777]">E-mail</p>
+        <span class="flex items-center justify-between">
+          <span class="flex items-center gap-2 w-7/15">
+            <i class="pi pi-money-bill text-lg text-[#777]"></i>
+            <p class="text-lg text-[#777]">Koszt zajęć</p>
+          </span>
+          <span class="flex items-center gap-2 w-7/15">
+            <i class="pi pi-clock text-lg text-[#777]"></i>
+            <p class="text-lg text-[#777]">Czas trwania</p>
+          </span>
         </span>
-        <input
-          type="text"
-          :value="data.email"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
+
+        <span class="flex items-center justify-between">
+          <input
+            type="text"
+            class="bg-[#eee] w-7/15 h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          />
+          <input
+            type="text"
+            class="bg-[#eee] w-7/15 h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          />
+        </span>
       </div>
+
       <span class="w-full flex justify-around">
         <button
           @click="emit('close')"
@@ -61,7 +68,7 @@ const { data } = defineProps<{
         <button
           class="w-[8rem] h-[2.5rem] bg-[#444] text-[#eee] rounded-lg active:bg-[#333] hover:bg-[#333] hover:cursor-pointer"
         >
-          Potwierdź
+          Dodaj
         </button>
       </span>
     </div>

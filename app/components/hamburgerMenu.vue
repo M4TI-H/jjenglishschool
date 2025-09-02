@@ -15,7 +15,7 @@ function toggleMenu() {
     <NuxtLink to="/">
       <img
         class="h-full w-18 hover:cursor-pointer"
-        src="../public/logo.jpeg"
+        src="/logo.jpeg"
         alt="Logo"
       />
     </NuxtLink>
@@ -34,21 +34,21 @@ function toggleMenu() {
         to="/oferta"
         class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e] flex items-center justify-center"
       >
-        Oferta
+        <p>Oferta</p>
       </NuxtLink>
 
       <NuxtLink
         to="/#omnie"
         class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e] flex items-center justify-center"
       >
-        O mnie
+        <p>O mnie</p>
       </NuxtLink>
 
       <NuxtLink
         to="/kontakt"
         class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e] flex items-center justify-center"
       >
-        Kontakt
+        <p>Kontakt</p>
       </NuxtLink>
 
       <div class="min-h-16 py-2">
@@ -56,7 +56,7 @@ function toggleMenu() {
           to="/umowsie"
           class="flex items-center justify-center w-44 lg:text-md h-10 bg-[#DECFA7] rounded-lg font-semibold hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
         >
-          Zapisz się na zajęcia
+          <p>Zapisz się na zajęcia</p>
         </NuxtLink>
       </div>
     </div>

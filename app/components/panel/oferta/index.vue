@@ -113,6 +113,11 @@ const toggleDisplayEdit = () => {
   displayEdit.value = !displayEdit.value;
 };
 
+const displayNew = ref<boolean>(false);
+const toggleDisplayNew = () => {
+  displayNew.value = !displayNew.value;
+};
+
 const toggleActive = () => {};
 </script>
 
@@ -120,18 +125,24 @@ const toggleActive = () => {};
   <section class="w-full flex flex-col items-center p-4 gap-4">
     <PanelOfertaDeleteModal v-if="displayDelete" @close="toggleDisplayDelete" />
     <PanelOfertaEditModal v-if="displayEdit" @close="toggleDisplayEdit" />
-    <h2 class="text-2xl font-semibold">Aktualna oferta</h2>
-
-    <div class="w-[90%] max-h-[36rem] flex flex-col overflow-y-auto gap-4">
+    <PanelOfertaNewModal v-if="displayNew" @close="toggleDisplayNew" />
+    <h2 class="text-2xl">Aktualna oferta</h2>
+    <button
+      @click="toggleDisplayNew"
+      class="w-full md:w-[10rem] h-[2.5rem] text-[#444] border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
+    >
+      Dodaj element
+    </button>
+    <div class="w-full max-h-[36rem] flex flex-col overflow-y-auto gap-4">
       <div
         v-for="oferta in oferty"
-        class="relative w-full bg-[#d9d9d9] flex flex-col items-start p-2 pb-8 md:pb-2 rounded-lg"
+        class="relative bg-[#d9d9d9] flex flex-col items-start p-2 pb-8 md:pb-2 rounded-lg"
       >
         <span class="flex items-center gap-1">
           <i class="pi pi-tag text-sm text-[#444]"></i>
           <p class="text-sm text-[#444]">Nazwa</p>
         </span>
-        <p class="font-semibold w-[80%] ml-1 mb-2">
+        <p class="w-[80%] ml-1 mb-2">
           {{ oferta.name }}
         </p>
 
@@ -139,7 +150,7 @@ const toggleActive = () => {};
           <i class="pi pi-align-left text-sm text-[#444]"></i>
           <p class="text-sm text-[#444]">Opis</p>
         </span>
-        <p class="text-sm text-[#444] font-thin max-w-[80%] ml-1 mb-2">
+        <p class="text-sm max-w-[80%] ml-1 mb-2">
           {{ oferta.description }}
         </p>
 
@@ -147,9 +158,7 @@ const toggleActive = () => {};
           <i class="pi pi-money-bill text-sm text-[#444]"></i>
           <p class="text-sm text-[#444]">Koszt zajęć</p>
         </span>
-        <p class="font-semibold text-lg ml-1 mb-2">
-          {{ oferta.price }} zł / godzina
-        </p>
+        <p class="ml-1 mb-2">{{ oferta.price }} zł / godzina</p>
 
         <div
           class="absolute top-2 right-2 w-[4rem] h-[2rem] flex items-center justify-around"
@@ -181,11 +190,5 @@ const toggleActive = () => {};
         </span>
       </div>
     </div>
-
-    <button
-      class="w-[10rem] h-[2.5rem] text-[#444] font-semibold mt-4 border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
-    >
-      Dodaj nową ofertę
-    </button>
   </section>
 </template>

@@ -13,103 +13,107 @@ const { data } = defineProps<{
     class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#000]/70 z-30"
   >
     <div
-      class="w-[90%] max-w-[24rem] max-h-[36rem] flex flex-col items-center p-4 gap-4 bg-[#D9D9D9] rounded-xl pb-8 z-40 overflow-y-auto"
+      class="w-[90%] max-w-[24rem] flex flex-col items-center p-4 gap-4 bg-[#D9D9D9] rounded-xl pb-8 z-40 overflow-y-auto"
     >
-      <h2 class="text-xl font-semibold">Zmiana danych kontaktowych</h2>
-      <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-facebook text-lg text-[#777]"></i>
-          <p class="text-lg text-[#777]">Facebook</p>
-        </span>
-        <input
-          type="text"
-          :value="data.facebook"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <input
-          type="text"
-          placeholder="URL"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
-        />
-      </div>
+      <p class="text-xl">Zmiana danych kontaktowych</p>
+      <div
+        class="w-full max-h-[28rem] md:max-h-full flex flex-col gap-4 overflow-y-auto md:overflow-hidden"
+      >
+        <div class="w-full flex flex-col gap-1">
+          <span class="flex items-center gap-2">
+            <i class="pi pi-facebook text-lg text-[#777]"></i>
+            <p class="text-lg text-[#777]">Facebook</p>
+          </span>
+          <input
+            type="text"
+            :value="data.facebook"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          />
+          <input
+            type="text"
+            placeholder="URL"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
+          />
+        </div>
 
-      <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-instagram text-lg text-[#777]"></i>
-          <p class="text-lg text-[#777]">Instagram</p>
-        </span>
-        <input
-          type="text"
-          :value="data.instagram"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <input
-          type="text"
-          placeholder="URL"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
-        />
-      </div>
+        <div class="w-full flex flex-col gap-1">
+          <span class="flex items-center gap-2">
+            <i class="pi pi-instagram text-lg text-[#777]"></i>
+            <p class="text-lg text-[#777]">Instagram</p>
+          </span>
+          <input
+            type="text"
+            :value="data.instagram"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          />
+          <input
+            type="text"
+            placeholder="URL"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
+          />
+        </div>
 
-      <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-linkedin text-lg text-[#777]"></i>
-          <p class="text-lg text-[#777]">Linkedin</p>
-        </span>
-        <input
-          type="text"
-          :value="data.linkedin"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <input
-          type="text"
-          placeholder="URL"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
-        />
-      </div>
+        <div class="w-full flex flex-col gap-1">
+          <span class="flex items-center gap-2">
+            <i class="pi pi-linkedin text-lg text-[#777]"></i>
+            <p class="text-lg text-[#777]">Linkedin</p>
+          </span>
+          <input
+            type="text"
+            :value="data.linkedin"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          />
+          <input
+            type="text"
+            placeholder="URL"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
+          />
+        </div>
 
-      <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-youtube text-lg text-[#777]"></i>
-          <p class="text-lg text-[#777]">YouTube</p>
-        </span>
-        <input
-          type="text"
-          :value="data.youtube"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <input
-          type="text"
-          placeholder="URL"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
-        />
-      </div>
+        <div class="w-full flex flex-col gap-1">
+          <span class="flex items-center gap-2">
+            <i class="pi pi-youtube text-lg text-[#777]"></i>
+            <p class="text-lg text-[#777]">YouTube</p>
+          </span>
+          <input
+            type="text"
+            :value="data.youtube"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          />
+          <input
+            type="text"
+            placeholder="URL"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
+          />
+        </div>
 
-      <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-twitter text-lg text-[#777]"></i>
-          <p class="text-lg text-[#777]">Twitter / X</p>
-        </span>
-        <input
-          type="text"
-          :value="data.twitter"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <input
-          type="text"
-          placeholder="URL"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
-        />
+        <div class="w-full flex flex-col gap-1">
+          <span class="flex items-center gap-2">
+            <i class="pi pi-twitter text-lg text-[#777]"></i>
+            <p class="text-lg text-[#777]">Twitter / X</p>
+          </span>
+          <input
+            type="text"
+            :value="data.twitter"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+          />
+          <input
+            type="text"
+            placeholder="URL"
+            class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
+          />
+        </div>
       </div>
 
       <span class="w-full flex justify-around">
         <button
           @click="emit('close')"
-          class="w-[8rem] h-[2.5rem] text-[#444] border-2 border-[#444] font-semibold rounded-lg active:bg-[#333] active:text-[#eee] hover:bg-[#333] hover:border-[#333] hover:text-[#eee] hover:cursor-pointer"
+          class="w-[8rem] h-[2.5rem] text-[#444] border-2 border-[#444] rounded-lg active:bg-[#333] active:text-[#eee] hover:bg-[#333] hover:border-[#333] hover:text-[#eee] hover:cursor-pointer"
         >
           Anuluj
         </button>
         <button
-          class="w-[8rem] h-[2.5rem] bg-[#444] text-[#eee] font-semibold rounded-lg active:bg-[#333] hover:bg-[#333] hover:cursor-pointer"
+          class="w-[8rem] h-[2.5rem] bg-[#444] text-[#eee] rounded-lg active:bg-[#333] hover:bg-[#333] hover:cursor-pointer"
         >
           Potwierdź
         </button>

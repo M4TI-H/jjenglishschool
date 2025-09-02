@@ -7,7 +7,7 @@ const hideLayout = ["/jjadmin", "/jjadmin-panel"];
 
 <template>
   <div>
-    <ScrollToTop />
+    <ScrollToTop v-if="!hideLayout.includes(route.path)" />
     <HamburgerMenu v-if="!hideLayout.includes(route.path)" />
     <NavMenu v-if="!hideLayout.includes(route.path)" />
     <NuxtPage />

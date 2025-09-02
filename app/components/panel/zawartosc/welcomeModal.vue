@@ -4,7 +4,7 @@ const emit = defineEmits<{
 }>();
 
 const { data } = defineProps<{
-  data: any;
+  data: { part: string; content: string }[];
 }>();
 </script>
 
@@ -17,38 +17,26 @@ const { data } = defineProps<{
     >
       <p class="text-xl">Zmiana danych kontaktowych</p>
       <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-user md:text-lg text-[#777]"></i>
-          <p class="md:text-lg text-[#777]">Imię i nazwisko</p>
-        </span>
-        <input
-          type="text"
-          :value="data.name_surname"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+        <p class="md:text-lg text-[#777]">Nagłówek</p>
+        <textarea
+          :value="data.find((z) => z.part === 'top')?.content"
+          class="bg-[#eee] w-full h-[4rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] p-2 font-semibold resize-none"
         />
       </div>
 
       <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-phone md:text-lg text-[#777]"></i>
-          <p class="md:text-lg text-[#777]">Numer telefonu</p>
-        </span>
-        <input
-          type="text"
-          :value="data.phone_number"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+        <p class="md:text-lg text-[#777]">Opis</p>
+        <textarea
+          :value="data.find((z) => z.part === 'mid')?.content"
+          class="bg-[#eee] w-full h-[8rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] p-2 font-semibold resize-none"
         />
       </div>
 
       <div class="w-full flex flex-col gap-1">
-        <span class="flex items-center gap-2">
-          <i class="pi pi-envelope md:text-lg text-[#777]"></i>
-          <p class="md:text-lg text-[#777]">E-mail</p>
-        </span>
-        <input
-          type="text"
-          :value="data.email"
-          class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
+        <p class="md:text-lg text-[#777]">Stopka</p>
+        <textarea
+          :value="data.find((z) => z.part === 'bottom')?.content"
+          class="bg-[#eee] w-full h-[4rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] p-2 font-semibold resize-none"
         />
       </div>
       <span class="w-full flex justify-around">

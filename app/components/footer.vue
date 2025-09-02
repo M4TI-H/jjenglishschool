@@ -1,5 +1,29 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components";
+
+const contactData = {
+  name_surname: "Jan Kowalski",
+  email: "example.english@email.com",
+  phone_number: "+48 123 456 789",
+};
+
+const socialMediaData = [
+  {
+    platform: "facebook",
+    name: "English Example",
+    link: "https://www.facebook.com",
+  },
+  {
+    platform: "instagram",
+    name: "english.example",
+    link: "https://www.instagram.com",
+  },
+  {
+    platform: "linkedin",
+    name: "Jan Kowalski",
+    link: "https://www.linkedin.com",
+  },
+];
 </script>
 
 <template>
@@ -12,22 +36,22 @@ import { NuxtLink } from "#components";
       <NuxtLink
         to="/"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Strona główna</NuxtLink
+        ><p>Strona główna</p></NuxtLink
       >
       <NuxtLink
         to="/oferta"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Oferta</NuxtLink
+        ><p>Oferta</p></NuxtLink
       >
       <NuxtLink
         to="/kontakt"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Kontakt</NuxtLink
+        ><p>Kontakt</p></NuxtLink
       >
       <NuxtLink
         to="/umowsie"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        >Umów się</NuxtLink
+        ><p>Umów się</p></NuxtLink
       >
     </div>
     <div
@@ -36,31 +60,29 @@ import { NuxtLink } from "#components";
       <span class="flex items-center gap-2">
         <i class="pi pi-phone text-[#273153] text-xs"></i>
         <p class="text-xs md:text-lg text-[#273153] font-semibold">
-          +48 123 456 789
+          {{ contactData.phone_number }}
         </p>
       </span>
 
       <span class="flex items-center gap-2">
         <i class="pi pi-envelope text-[#273153] text-xs"></i>
         <p class="text-xs md:text-lg text-[#273153] font-semibold">
-          example.english@email.com
+          {{ contactData.email }}
         </p>
       </span>
 
-      <span class="flex items-center gap-8">
-        <NuxtLink to="https://www.facebook.com/" class="hover:cursor-pointer">
+      <span class="flex items-center gap-4 md:gap-8">
+        <NuxtLink
+          v-for="(socialMedia, id) in socialMediaData"
+          :key="id"
+          :to="socialMedia.link"
+          class="hover:cursor-pointer"
+        >
           <i
-            class="pi pi-facebook text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]"
-          />
-        </NuxtLink>
-        <NuxtLink to="https://www.instagram.com/" class="hover:cursor-pointer">
-          <i
-            class="pi pi-instagram text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]"
-          />
-        </NuxtLink>
-        <NuxtLink to="https://www.linkedin.com/" class="hover:cursor-pointer">
-          <i
-            class="pi pi-linkedin text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]"
+            :class="[
+              `pi pi-${socialMedia.platform}`,
+              'text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]',
+            ]"
           />
         </NuxtLink>
       </span>

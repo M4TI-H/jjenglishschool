@@ -4,7 +4,7 @@ const displayedForm = ref<string>("kontakt");
 
 <template>
   <main
-    class="max-w-screen w-full min-h-screen flex flex-col items-center pb-4 py-8 bg-[#D9D9D9]"
+    class="fixed w-screen min-h-screen flex flex-col items-center pb-4 py-8 bg-[#D9D9D9]"
   >
     <h1 class="text-[#444] text-2xl font-bold mb-8">Panel administratora</h1>
     <section
@@ -24,12 +24,12 @@ const displayedForm = ref<string>("kontakt");
             :class="displayedForm === 'kontakt' ? 'text-black' : 'text-[#444]'"
             class="pi pi-phone text-xl text-[#444]"
           ></i>
-          <h2
+          <p
             :class="displayedForm === 'kontakt' ? 'text-black' : 'text-[#444]'"
-            class="text-[#444] font-semibold hidden md:block"
+            class="text-lg text-[#444] hidden md:block"
           >
             Dane kontaktowe
-          </h2>
+          </p>
         </button>
 
         <button
@@ -45,12 +45,12 @@ const displayedForm = ref<string>("kontakt");
             :class="displayedForm === 'oferta' ? 'text-black' : 'text-[#444]'"
             class="pi pi-tag text-xl"
           ></i>
-          <h2
+          <p
             :class="displayedForm === 'oferta' ? 'text-black' : 'text-[#444]'"
-            class="font-semibold hidden md:block"
+            class="text-lg text-[#444] hidden md:block"
           >
             Oferta i cennik
-          </h2>
+          </p>
         </button>
 
         <button
@@ -66,18 +66,18 @@ const displayedForm = ref<string>("kontakt");
             :class="displayedForm === 'content' ? 'text-black' : 'text-[#444]'"
             class="pi pi-bars text-2xl text-[#444]"
           ></i>
-          <h2
+          <p
             :class="displayedForm === 'content' ? 'text-black' : 'text-[#444]'"
-            class="text-[#444] font-semibold hidden md:block"
+            class="text-lg text-[#444] hidden md:block"
           >
             Zawartość strony
-          </h2>
+          </p>
         </button>
       </div>
       <div class="w-full flex flex-col bg-[#eee] md:rounded-r-2xl">
         <PanelContact v-if="displayedForm === 'kontakt'" />
         <PanelOferta v-if="displayedForm === 'oferta'" />
-        <!--<PanelContent v-if="displayedForm === 'content'" /> -->
+        <PanelZawartosc v-if="displayedForm === 'content'" />
       </div>
     </section>
   </main>

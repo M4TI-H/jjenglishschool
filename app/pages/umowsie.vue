@@ -28,13 +28,13 @@ function toggleForm(type: string) {
     >
       <button
         @click="toggleForm('regular')"
-        class="w-[16rem] lg:w-[16rem] h-[4rem] text-[#0e121e] text-lg font-semibold rounded-xl bg-[#DECFA7] active:bg-[#CDB67A] hover:cursor-pointer hover:bg-[#CDB67A]"
+        class="w-[16rem] lg:w-[16rem] h-[4rem] text-[#0e121e] text-lg rounded-xl bg-[#DECFA7] active:bg-[#CDB67A] hover:cursor-pointer hover:bg-[#CDB67A]"
       >
         Jestem stałym uczniem
       </button>
       <button
         @click="toggleForm('new')"
-        class="w-[16rem] lg:w-[16rem] h-[4rem] text-[#0e121e] textlg font-semibold rounded-xl bg-[#DECFA7] active:bg-[#CDB67A] hover:cursor-pointer hover:bg-[#CDB67A]"
+        class="w-[16rem] lg:w-[16rem] h-[4rem] text-[#0e121e] textlg rounded-xl bg-[#DECFA7] active:bg-[#CDB67A] hover:cursor-pointer hover:bg-[#CDB67A]"
       >
         Chcę zapisać się na korepetycje
       </button>

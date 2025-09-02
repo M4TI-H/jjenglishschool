@@ -62,10 +62,10 @@ const oferty = [
         <span
           class="w-full flex flex-col border-b-1 pb-2 border-b-[#DECFA7] gap-2"
         >
-          <h2 class="md:text-xl text-[#DECFA7] font-semibold">
+          <p class="md:text-xl text-[#DECFA7] font-semibold">
             {{ oferta.name }}
-          </h2>
-          <p class="text-sm text-[#DECFA7]">
+          </p>
+          <p class="text-[#DECFA7]">
             {{ oferta.description }}
           </p>
         </span>
@@ -75,10 +75,10 @@ const oferty = [
             {{ oferta.price }} zł / godz
           </p>
           <button
-            class="w-[8rem] h-[2rem] rounded-lg text-sm font-semibold bg-[#DECFA7] hover:bg-[#CDB67A] hover:cursor-pointer active:bg-[#CDB67A]"
+            class="w-[8rem] h-[2rem] rounded-lg text-sm bg-[#DECFA7] hover:bg-[#CDB67A] hover:cursor-pointer active:bg-[#CDB67A] transition duration-150 ease-in-out"
           >
             <span class="flex items-center justify-center gap-3"
-              >Umów się
+              ><p>Umów się</p>
               <i class="pi pi-arrow-circle-right"></i>
             </span>
           </button>

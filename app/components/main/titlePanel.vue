@@ -10,7 +10,7 @@
       class="absolute w-full h-[30rem] lg:h-[40rem] bg-[#0e121e]/90 z-20"
     ></div>
     <h1
-      class="absolute text-2xl md:text-[4rem] lg:text-[5rem] text-[#DECFA7] font-thin z-20 md:bottom-8 md:left-8"
+      class="font-playfair absolute text-2xl md:text-[4rem] lg:text-[5rem] text-[#DECFA7] font-thin z-20 md:bottom-8 md:left-8"
     >
       Your English. Your Future.
     </h1>

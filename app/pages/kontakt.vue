@@ -3,10 +3,25 @@ const contactData = {
   name_surname: "Jan Kowalski",
   email: "example.english@email.com",
   phone_number: "+48 123 456 789",
-  facebook: "English Example",
-  instagram: "english.example",
-  linkedin: "Mateusz Hann",
 };
+
+const socialMediaData = [
+  {
+    platform: "facebook",
+    name: "English Example",
+    link: "https://www.facebook.com",
+  },
+  {
+    platform: "instagram",
+    name: "english.example",
+    link: "https://www.instagram.com",
+  },
+  {
+    platform: "linkedin",
+    name: "Jan Kowalski",
+    link: "https://www.linkedin.com",
+  },
+];
 </script>
 
 <template>
@@ -60,35 +75,22 @@ const contactData = {
           Obserwuj mnie
         </h2>
         <div class="max-w-[40rem] w-full flex flex-col items-center gap-8">
-          <span class="flex items-center gap-2">
-            <i class="pi pi-facebook text-[#DECFA7] text-xl"></i>
-            <a
-              :href="`https://www.facebook.com/${contactData.facebook}`"
-              class="text-lg text-[#DECFA7] font-semibold hover:underline hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A]"
-            >
-              {{ contactData.facebook }}
-            </a>
-          </span>
-
-          <span class="flex items-center gap-2">
-            <i class="pi pi-instagram text-[#DECFA7] text-xl"></i>
-            <a
-              :href="`https://www.instagram.com/${contactData.instagram}`"
-              class="text-lg text-[#DECFA7] font-semibold hover:underline hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A]"
-            >
-              {{ contactData.instagram }}
-            </a>
-          </span>
-
-          <span class="flex items-center gap-2">
-            <i class="pi pi-linkedin text-[#DECFA7] text-xl"></i>
-            <a
-              :href="`https://www.linkedin.com/in/${contactData.linkedin}`"
-              class="text-lg text-[#DECFA7] font-semibold hover:underline hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A]"
-            >
-              {{ contactData.linkedin }}
-            </a>
-          </span>
+          <NuxtLink
+            v-for="(socialMedia, id) in socialMediaData"
+            :key="id"
+            :to="socialMedia.link"
+            class="hover:cursor-pointer flex items-center gap-2"
+          >
+            <i
+              :class="[
+                `pi pi-${socialMedia.platform}`,
+                'text-[#DECFA7] text-xl hover:text-[#485B99] active:text-[#485B99]',
+              ]"
+            />
+            <p class="text-[#DECFA7] text-lg font-semibold">
+              {{ socialMedia.name }}
+            </p>
+          </NuxtLink>
         </div>
       </div>
     </section>

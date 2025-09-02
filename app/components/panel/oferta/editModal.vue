@@ -11,7 +11,7 @@ const emit = defineEmits<{
     <div
       class="w-[90%] max-w-[24rem] flex flex-col items-center p-4 gap-4 md:gap-8 bg-[#D9D9D9] rounded-xl pb-8 z-40"
     >
-      <h2 class="text-xl font-semibold">Zmiana danych kontaktowych</h2>
+      <p class="text-xl">Zmiana danych oferty</p>
       <div class="w-full flex flex-col gap-1">
         <span class="flex items-center gap-2">
           <i class="pi pi-tag text-lg text-[#777]"></i>
@@ -61,12 +61,12 @@ const emit = defineEmits<{
       <span class="w-full flex justify-around">
         <button
           @click="emit('close')"
-          class="w-[8rem] h-[2.5rem] text-[#444] border-2 border-[#444] font-semibold rounded-lg active:bg-[#333] active:text-[#eee] hover:bg-[#333] hover:border-[#333] hover:text-[#eee] hover:cursor-pointer"
+          class="w-[8rem] h-[2.5rem] text-[#444] border-2 border-[#444] rounded-lg active:bg-[#333] active:text-[#eee] hover:bg-[#333] hover:border-[#333] hover:text-[#eee] hover:cursor-pointer"
         >
           Anuluj
         </button>
         <button
-          class="w-[8rem] h-[2.5rem] bg-[#444] text-[#eee] font-semibold rounded-lg active:bg-[#333] hover:bg-[#333] hover:cursor-pointer"
+          class="w-[8rem] h-[2.5rem] bg-[#444] text-[#eee] rounded-lg active:bg-[#333] hover:bg-[#333] hover:cursor-pointer"
         >
           Potwierdź
         </button>

@@ -21,21 +21,21 @@ const oferty = [
           :key="id"
           class="w-full flex justify-between items-end"
         >
-          <p class="text-lg text-[#DECFA7] font-semibold max-w-[70%]">
+          <p class="text-lg text-[#DECFA7] max-w-[70%]">
             {{ oferta.name }}
           </p>
           <p class="text-lg text-[#DECFA7] font-semibold">
             {{ oferta.price }} zł
           </p>
         </span>
-        <p class="text-lg text-[#DECFA7] font-semibold">I więcej...</p>
+        <p class="text-lg text-[#DECFA7]">I więcej...</p>
       </div>
     </div>
     <NuxtLink
       to="/oferta"
-      class="flex items-center justify-center min-w-[10em] lg:w-[12rem] lg:text-md h-12 bg-[#DECFA7] rounded-lg font-semibold hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
+      class="flex items-center justify-center min-w-[10em] lg:w-[12rem] lg:text-md h-12 bg-[#DECFA7] rounded-lg hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A] transition duration-150 ease-in-out"
     >
-      Poznaj szczegóły
+      <p>Poznaj szczegóły</p>
     </NuxtLink>
   </section>
 </template>

@@ -19,7 +19,9 @@ const content = {
       </h3>
       <br />
       <span class="max-w-[40rem] text-md">
-        <h3 class="text-[#DECFA7] lg:text-2xl">{{ content.body_header }}</h3>
+        <h3 class="text-[#DECFA7] lg:text-2xl">
+          {{ content.body_header }}
+        </h3>
         <p class="text-[#DECFA7] lg:text-xl">{{ content.body }}</p>
       </span>
       <h1 class="text-3xl md:text-4xl text-[#DECFA7] font-bold mt-8">
@@ -27,7 +29,8 @@ const content = {
       </h1>
     </div>
     <img
-      src="../public/logo.jpeg"
+      src="/logo.jpeg"
+      alt="logo"
       class="w-[20rem] md:w-[12rem] lg:w-[30rem] md:h-[10rem] lg:h-[20rem] hidden md:block"
     />
   </section>
