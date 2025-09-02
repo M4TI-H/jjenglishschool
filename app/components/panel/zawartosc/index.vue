@@ -73,7 +73,7 @@ const toggleDisplayElementCreate = () => {
 </script>
 
 <template>
-  <section class="w-full max-w-full flex flex-col items-center p-4 gap-4">
+  <section class="w-full flex flex-col items-center p-4 gap-4">
     <PanelZawartoscDeleteModal
       v-if="displayDelete"
       @close="toggleDisplayDelete"
@@ -98,10 +98,9 @@ const toggleDisplayElementCreate = () => {
       @close="toggleDisplayElementCreate"
     />
 
-    <h2 class="text-2xl mb-4">Zawartość strony</h2>
-
+    <p class="text-2xl">Zawartość strony</p>
     <div
-      class="w-full max-w-[72rem] max-h-[42rem] flex flex-col gap-4 overflow-y-auto"
+      class="w-full max-h-[36rem] flex flex-col gap-4 overflow-y-auto pb-16 xl:pb-0"
     >
       <div
         class="relative w-full flex flex-col gap-2 p-4 bg-[#D9D9D9] rounded-lg"
@@ -110,12 +109,11 @@ const toggleDisplayElementCreate = () => {
         <img src="/logo.jpeg" class="w-48 max-w-full h-auto rounded-lg" />
         <button
           @click="toggleDisplayLogo"
-          class="md:absolute md:bottom-4 md:right-4 w-full md:w-[10rem] h-[2.5rem] text-[#444] mt-4 border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
+          class="md:absolute md:bottom-4 md:right-4 w-full md:w-[10rem] max-w-[20rem] h-[2.5rem] text-[#444] mt-4 border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
         >
           Zmień
         </button>
       </div>
-
       <div
         class="relative w-full flex flex-col gap-2 p-4 bg-[#D9D9D9] rounded-lg"
       >
@@ -123,33 +121,32 @@ const toggleDisplayElementCreate = () => {
 
         <div class="flex flex-col justify-center">
           <p class="md:text-lg text-[#777]">Nagłówek</p>
-          <p class="max-w-full truncate">
+          <p class="max-w-[80%]">
             {{ zawartosc.find((z) => z.part === "top")?.content }}
           </p>
         </div>
 
         <div class="flex flex-col justify-center">
           <p class="md:text-lg text-[#777]">Opis</p>
-          <p class="max-w-full truncate">
+          <p class="max-w-[80%]">
             {{ zawartosc.find((z) => z.part === "mid")?.content }}
           </p>
         </div>
 
         <div class="flex flex-col justify-center">
           <p class="md:text-lg text-[#777]">Stopka</p>
-          <p class="max-w-full truncate">
+          <p class="max-w-[80%]">
             {{ zawartosc.find((z) => z.part === "bottom")?.content }}
           </p>
         </div>
 
         <button
           @click="toggleDisplayWelcome"
-          class="md:absolute md:bottom-4 md:right-4 w-full md:w-[10rem] h-[2.5rem] text-[#444] mt-4 border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
+          class="md:absolute md:bottom-4 md:right-4 w-full md:w-[10rem] max-w-[20rem] h-[2.5rem] text-[#444] mt-4 border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
         >
           Edytuj sekcję
         </button>
       </div>
-
       <div
         class="relative w-full flex flex-col gap-2 p-4 bg-[#D9D9D9] rounded-lg"
       >
@@ -159,7 +156,7 @@ const toggleDisplayElementCreate = () => {
           <h3 class="text-xl text-[#444]">Panel własny</h3>
           <button
             @click="toggleDisplayElementCreate"
-            class="w-full md:w-[10rem] h-[2.5rem] text-[#444] border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
+            class="w-full md:w-[10rem] max-w-[20rem] h-[2.5rem] text-[#444] border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
           >
             Dodaj element
           </button>
@@ -179,14 +176,14 @@ const toggleDisplayElementCreate = () => {
 
           <span class="flex items-center gap-2">
             <i class="pi pi-star"></i>
-            <p class="max-w-full truncate whitespace-nowrap overflow-hidden">
+            <p class="max-w-[80%] overflow-hidden">
               {{ part.header }}
             </p>
           </span>
 
           <span class="flex items-center gap-2">
             <i class="pi pi-align-center"></i>
-            <p class="max-w-full truncate whitespace-nowrap overflow-hidden">
+            <p class="max-w-[80%] overflow-hidden">
               {{ part.paragraph }}
             </p>
           </span>

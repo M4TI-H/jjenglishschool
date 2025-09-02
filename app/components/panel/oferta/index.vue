@@ -126,14 +126,16 @@ const toggleActive = () => {};
     <PanelOfertaDeleteModal v-if="displayDelete" @close="toggleDisplayDelete" />
     <PanelOfertaEditModal v-if="displayEdit" @close="toggleDisplayEdit" />
     <PanelOfertaNewModal v-if="displayNew" @close="toggleDisplayNew" />
-    <h2 class="text-2xl">Aktualna oferta</h2>
+    <p class="text-2xl">Aktualna oferta</p>
     <button
       @click="toggleDisplayNew"
       class="w-full md:w-[10rem] h-[2.5rem] text-[#444] border-2 border-[#444] rounded-lg self-center active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
     >
       Dodaj element
     </button>
-    <div class="w-full max-h-[36rem] flex flex-col overflow-y-auto gap-4">
+    <div
+      class="w-full max-h-[36rem] flex flex-col overflow-y-auto gap-4 pb-24 lg:pb-0"
+    >
       <div
         v-for="oferta in oferty"
         class="relative bg-[#d9d9d9] flex flex-col items-start p-2 pb-8 md:pb-2 rounded-lg"
