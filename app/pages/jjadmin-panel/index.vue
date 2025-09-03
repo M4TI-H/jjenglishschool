@@ -24,7 +24,13 @@ const handleLogout = async () => {
   <main
     class="fixed w-screen min-h-screen flex flex-col items-center pb-4 py-8 bg-[#D9D9D9]"
   >
-    <div class="flex items-center mb-8">
+    <div class="w-full lg:w-[50%] flex items-center justify-between mb-8">
+      <NuxtLink
+        to="/"
+        class="min-w-[6em] lg:w-[8rem] h-10 bg-[#eee] rounded-lg hover:cursor-pointer hover:bg-[#ccc] active:bg-[#ccc] flex items-center justify-center"
+      >
+        <p>Strona główna</p>
+      </NuxtLink>
       <p class="text-[#444] text-2xl font-bold">Panel administratora</p>
       <button
         @click="handleLogout"

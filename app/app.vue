@@ -2,7 +2,7 @@
 import { useRoute } from "vue-router";
 
 const route = useRoute();
-const hideLayout = ["/jjadmin", "/jjadmin-panel"];
+const hideLayout = ["/jjadmin", "/jjadmin-panel", "/jjadmin/change-password"];
 </script>
 
 <template>
