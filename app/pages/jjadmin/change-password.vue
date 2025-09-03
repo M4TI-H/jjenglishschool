@@ -71,7 +71,7 @@ const onSubmit = handleSubmit(handlePasswordChange);
   >
     <form
       @submit.prevent="onSubmit"
-      class="relative bg-[#0e121e] w-[90%] md:max-w-[24rem] lg:max-w-[32rem] py-8 px-4 flex flex-col items-center rounded-xl gap-8"
+      class="bg-[#0e121e] w-[90%] md:max-w-[24rem] lg:max-w-[32rem] py-8 px-4 flex flex-col items-center rounded-xl gap-8"
     >
       <h1 class="text-[#DECFA7] text-3xl font-bold">Zmień hasło</h1>
       <img src="/logo.jpeg" class="w-[8rem]" />
@@ -137,33 +137,36 @@ const onSubmit = handleSubmit(handlePasswordChange);
           </p>
         </div>
       </div>
+      <div
+        class="w-full flex flex-col md:flex-row items-center justify-around gap-4"
+      >
+        <NuxtLink
+          to="/jjadmin"
+          class="min-w-[10em] lg:w-[12rem] h-12 bg-[#273153] text-[#DECFA7] rounded-lg hover:bg-[#485B99] hover:cursor-pointer active:bg-[#485B99] flex items-center justify-center"
+          ><p>Cofnij</p></NuxtLink
+        >
+        <button
+          v-if="!loading && meta.valid"
+          type="submit"
+          class="min-w-[10em] lg:w-[12rem] h-12 bg-[#DECFA7] rounded-lg hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
+        >
+          Potwierdź
+        </button>
 
-      <button
-        v-if="!loading && meta.valid"
-        type="submit"
-        class="min-w-[10em] lg:w-[12rem] h-12 bg-[#DECFA7] rounded-lg hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
-      >
-        Potwierdź
-      </button>
+        <button
+          v-if="!loading && !meta.valid"
+          class="min-w-[10em] lg:w-[12rem] h-12 bg-[#DECFA7]/70 rounded-lg"
+        >
+          Potwierdź
+        </button>
 
-      <button
-        v-if="!loading && !meta.valid"
-        class="min-w-[10em] lg:w-[12rem] h-12 bg-[#DECFA7]/70 rounded-lg"
-      >
-        Potwierdź
-      </button>
-
-      <button
-        v-if="loading"
-        class="min-w-[10em] lg:w-[12rem] h-12 bg-[#DECFA7]/70 rounded-lg"
-      >
-        <i class="pi pi-spinner pi-spin"></i>
-      </button>
-      <NuxtLink
-        to="/jjadmin"
-        class="absolute top-8 left-8 text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer hover:underline active:text-[#485B99]"
-        >Cofnij</NuxtLink
-      >
+        <button
+          v-if="loading"
+          class="min-w-[10em] lg:w-[12rem] h-12 bg-[#DECFA7]/70 rounded-lg"
+        >
+          <i class="pi pi-spinner pi-spin"></i>
+        </button>
+      </div>
     </form>
   </main>
 </template>
