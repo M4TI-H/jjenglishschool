@@ -1,12 +1,46 @@
 <script setup lang="ts">
+const supabase = useSupabaseClient();
+definePageMeta({
+  middleware: "auth",
+});
+
 const displayedForm = ref<string>("kontakt");
+const loading = ref<boolean>(false);
+
+const handleLogout = async () => {
+  loading.value = true;
+  const { error } = await supabase.auth.signOut();
+
+  if (error) {
+    console.error(error);
+    return;
+  }
+  loading.value = false;
+  navigateTo("/jjadmin");
+};
 </script>
 
 <template>
   <main
     class="fixed w-screen min-h-screen flex flex-col items-center pb-4 py-8 bg-[#D9D9D9]"
   >
-    <p class="text-[#444] text-2xl font-bold mb-8">Panel administratora</p>
+    <div class="flex items-center mb-8">
+      <p class="text-[#444] text-2xl font-bold">Panel administratora</p>
+      <button
+        @click="handleLogout"
+        v-if="!loading"
+        class="min-w-[6em] lg:w-[8rem] h-10 bg-[#eee] rounded-lg hover:cursor-pointer hover:bg-[#ccc] active:bg-[#ccc]"
+      >
+        Wyloguj
+      </button>
+      <button
+        @click="handleLogout"
+        v-if="loading"
+        class="min-w-[6em] lg:w-[8rem] h-10 bg-[#eee]/70 rounded-lg"
+      >
+        <i class="pi pi-spinner pi-spin"></i>
+      </button>
+    </div>
     <section
       class="w-full lg:w-[80%] h-[80%] max-w-[90rem] flex flex-col lg:flex-row bg-[#999] rounded-2xl"
     >

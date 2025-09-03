@@ -8,5 +8,8 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   css: ["@/assets/css/main.css"],
-  modules: ["@nuxt/fonts"],
+  modules: ["@nuxt/fonts", "@nuxtjs/supabase"],
+  supabase: {
+    redirect: false,
+  },
 });
