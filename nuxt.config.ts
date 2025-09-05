@@ -6,8 +6,8 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-      title: "JJ English School",
-      link: [{ rel: "icon", type: "image/png", href: "/logo.jpeg" }],
+      title: "J J | English School",
+      link: [{ rel: "icon", type: "image/png", href: "/logo.png" }],
     },
   },
   ssr: true,

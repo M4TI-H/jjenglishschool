@@ -43,11 +43,9 @@ function toggleForm(type: string) {
       </button>
     </div>
 
-    <div id="form" v-if="showRegularStudent">Kalendarzyk z godzinami</div>
+    <FormsMonthlyBox id="form" v-if="showRegularStudent" />
 
-    <div id="form" v-if="showNewStudent">
-      Formularz kontaktowy dla nowego ucznia
-    </div>
+    <FormsContactBox id="form" v-if="showNewStudent" />
   </main>
   <Footer />
 </template>

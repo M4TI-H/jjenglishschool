@@ -26,7 +26,7 @@
         </ul>
       </span>
       <h1 class="text-xl md:text-3xl text-[#DECFA7] mt-8">
-        NO PROBLEM! poradzimy sobie ze wszystkim.
+        NO PROBLEM! Poradzimy sobie ze wszystkim.
       </h1>
     </div>
     <img

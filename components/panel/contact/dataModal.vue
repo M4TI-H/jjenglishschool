@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import type Lesson from "~/types/lesson";
 import { useField, useForm } from "vee-validate";
 import { z } from "zod";
 import { toTypedSchema } from "@vee-validate/zod";

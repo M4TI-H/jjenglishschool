@@ -11,11 +11,9 @@ onMounted(async () => {
   <NavMenu />
   <ScrollToTop />
   <main
-    class="max-w-screen w-full min-h-screen flex flex-col items-center pb-4 py-8 bg-[#1A2137]"
+    class="max-w-screen w-full min-h-screen flex flex-col items-center pb-4 py-8 bg-[#1A2137] gap-8"
   >
-    <h2 class="text-3xl md:text-4xl text-[#DECFA7] font-semibold mb-8">
-      Oferta
-    </h2>
+    <h2 class="text-3xl md:text-4xl text-[#DECFA7] font-semibold">Oferta</h2>
     <div v-if="loading">
       <i class="pi pi-spin pi-spinner text-2xl text-[#DECFA7]"></i>
     </div>
@@ -41,19 +39,20 @@ onMounted(async () => {
 
         <span class="w-full flex items-center justify-between py-2">
           <p class="text-xl md:text-2xl text-[#DECFA7] font-bold">
-            {{ oferta.price }} zł / {{ oferta.duration }}
+            {{ oferta.duration }}
           </p>
-          <button
-            class="w-[8rem] h-[2rem] rounded-lg text-sm bg-[#DECFA7] hover:bg-[#CDB67A] hover:cursor-pointer active:bg-[#CDB67A] transition duration-150 ease-in-out"
-          >
-            <span class="flex items-center justify-center gap-3"
-              ><p>Umów się</p>
-              <i class="pi pi-arrow-circle-right"></i>
-            </span>
-          </button>
+          <p class="text-xl md:text-2xl text-[#DECFA7] font-bold">
+            {{ oferta.price }} zł
+          </p>
         </span>
       </div>
     </div>
+    <NuxtLink
+      to="/umowsie"
+      class="flex items-center justify-center min-w-[10em] lg:w-[12rem] lg:text-md h-12 mb-16 bg-[#DECFA7] rounded-lg hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A] transition duration-150 ease-in-out"
+    >
+      <p>Umów się na zajęcia</p>
+    </NuxtLink>
   </main>
   <Footer />
 </template>
