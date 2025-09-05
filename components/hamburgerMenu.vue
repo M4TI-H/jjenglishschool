@@ -15,7 +15,7 @@ function toggleMenu() {
     <NuxtLink to="/">
       <img
         class="h-full w-18 hover:cursor-pointer"
-        src="/logo.jpeg"
+        src="/logo.png"
         alt="Logo"
       />
     </NuxtLink>

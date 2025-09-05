@@ -60,7 +60,7 @@ const onSubmit = handleSubmit(handleLogin);
       <h2 class="text-[#DECFA7] text-3xl font-bold text-center">
         Panel administratora
       </h2>
-      <img src="/logo.jpeg" class="w-[8rem]" />
+      <img src="/logo.png" class="w-[8rem]" />
       <div class="h-[5rem]">
         <div class="relative max-w-[20rem] lg:max-w-[28rem] w-full">
           <i

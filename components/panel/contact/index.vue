@@ -15,11 +15,6 @@ const refreshData = async () => {
 const displayContactDataForm = ref<boolean>(false);
 const displaySocialDataForm = ref<boolean>(false);
 
-const displaySocialDescriptionForm = ref<boolean>(false);
-const toggleDisplayDescription = () => {
-  displaySocialDescriptionForm.value = !displaySocialDescriptionForm.value;
-};
-
 onMounted(async () => {
   await fetchContactData();
   await fetchSocialMediaData();
@@ -27,7 +22,9 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section class="w-full min-h-[42rem] flex flex-col items-center p-4 gap-4">
+  <section
+    class="w-full min-h-[42rem] flex flex-col items-center p-4 gap-4 overflow-y-auto"
+  >
     <PanelContactDataModal
       v-if="displayContactDataForm"
       :data="contactData"
@@ -42,12 +39,6 @@ onMounted(async () => {
       @refresh="refreshData"
     />
 
-    <PanelContactDescriptionModal
-      v-if="displaySocialDescriptionForm"
-      :data="contactData"
-      @close="toggleDisplayDescription"
-    />
-
     <p class="text-2xl">Twoje dane kontaktowe</p>
     <div v-if="loading" class="w-full h-full flex items-center justify-center">
       <i class="pi pi-spin pi-spinner text-2xl text-[#444]"></i>
@@ -58,7 +49,7 @@ onMounted(async () => {
     >
       <div class="w-full flex flex-col md:flex-row justify-center gap-8">
         <div
-          class="relative w-full md:w-1/2 md:max-w-[36rem] flex flex-col gap-2 p-4 bg-[#D9D9D9] rounded-lg"
+          class="relative w-full lg:h-[32rem] md:w-1/2 md:max-w-[36rem] flex flex-col gap-2 p-4 bg-[#D9D9D9] rounded-lg"
         >
           <h3 class="text-xl text-[#444]">Dane osobiste</h3>
           <div class="flex flex-col justify-center">
@@ -175,24 +166,6 @@ onMounted(async () => {
             Edytuj sekcję
           </button>
         </div>
-      </div>
-      <div
-        class="relative w-full max-w-[42rem] flex flex-col self-center gap-2 p-4 text-center md:text-start bg-[#D9D9D9] rounded-lg"
-      >
-        <h3 class="text-xl text-[#444]">Informacja do kontaktów</h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-          faucibus auctor velit, tempus lobortis purus ultricies lacinia. In
-          tincidunt ligula vel sem aliquet aliquet eget sit amet turpis. Nullam
-          gravida tortor lectus, a feugiat velit vestibulum vitae. Aenean id
-          diam sed mi finibus blandit vitae a nunc.
-        </p>
-        <button
-          @click="toggleDisplayDescription"
-          class="w-[10rem] h-[2.5rem] text-[#444] mt-4 border-2 border-[#444] rounded-lg self-center md:self-end active:bg-[#444] active:text-[#eee] hover:bg-[#444] hover:text-[#eee] hover:cursor-pointer"
-        >
-          Edytuj tekst
-        </button>
       </div>
     </div>
   </section>

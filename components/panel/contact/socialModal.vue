@@ -153,7 +153,10 @@ const onSubmit = handleSubmit(handleSocialsEdit);
               v-model="facebookURL"
               class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2"
             />
-            <p v-if="facebookURLError" class="text-sm text-red-500 ml-2">
+            <p
+              v-if="facebookURLError"
+              class="h-[1rem] text-sm text-red-500 ml-2"
+            >
               {{ facebookURLError }}
             </p>
           </span>

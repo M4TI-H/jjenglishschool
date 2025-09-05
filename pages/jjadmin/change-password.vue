@@ -74,7 +74,7 @@ const onSubmit = handleSubmit(handlePasswordChange);
       class="bg-[#0e121e] w-[90%] md:max-w-[24rem] lg:max-w-[32rem] py-8 px-4 flex flex-col items-center rounded-xl gap-8"
     >
       <h1 class="text-[#DECFA7] text-3xl font-bold">Zmień hasło</h1>
-      <img src="/logo.jpeg" class="w-[8rem]" />
+      <img src="/logo.png" class="w-[8rem]" />
       <div class="flex flex-col gap-8">
         <div class="h-[5rem]">
           <div class="relative max-w-[20rem] lg:max-w-[28rem] w-full">

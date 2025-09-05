@@ -1,7 +1,25 @@
 <script setup lang="ts">
+import type CustomContent from "~/types/customContent";
+
 const emit = defineEmits<{
   (e: "close"): void;
+  (e: "refresh"): void;
 }>();
+
+const { element } = defineProps<{
+  element: CustomContent | null;
+}>();
+
+const { loading, deleteCustomElement } = useContent();
+
+const handleElementDelete = async () => {
+  if (!element) return;
+
+  await deleteCustomElement(element.id);
+
+  emit("refresh");
+  emit("close");
+};
 </script>
 
 <template>
@@ -20,9 +38,17 @@ const emit = defineEmits<{
           Anuluj
         </button>
         <button
+          @click="handleElementDelete"
+          v-if="!loading"
           class="w-[8rem] h-[2.5rem] bg-[#444] text-[#eee] rounded-lg active:bg-[#333] hover:bg-[#333] hover:cursor-pointer"
         >
           Usuń
+        </button>
+        <button
+          v-if="loading"
+          class="w-[8rem] h-[2.5rem] bg-[#444]/70 text-[#eee] rounded-lg"
+        >
+          <i class="pi pi-spinner pi-spin"></i>
         </button>
       </span>
     </div>

@@ -1,10 +1,9 @@
 <script setup lang="ts">
-const oferty = [
-  { name: "Godzina korepetycji angielskiego", price: 100 },
-  { name: "Rozmowa", price: 80 },
-  { name: "Rozwiązywanie zadań maturalnych", price: 100 },
-  { name: "Powtórka do testu", price: 60 },
-];
+const { activeLessonsData, fetchActiveLessons } = useLessons();
+
+onMounted(async () => {
+  await fetchActiveLessons();
+});
 </script>
 
 <template>
@@ -17,7 +16,7 @@ const oferty = [
     >
       <div class="w-full flex flex-col gap-8 p-2">
         <span
-          v-for="(oferta, id) in oferty"
+          v-for="(oferta, id) in activeLessonsData"
           :key="id"
           class="w-full flex justify-between items-end"
         >

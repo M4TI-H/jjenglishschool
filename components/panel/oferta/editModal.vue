@@ -46,10 +46,10 @@ const { value: duration, errorMessage: durationError } =
 const handleLessonEdit = async () => {
   const newLessonData = {
     id: 0,
-    name: name.value,
-    description: description.value,
+    name: name.value.trim(),
+    description: description.value.trim(),
     price: Number(price.value),
-    duration: duration.value,
+    duration: duration.value.trim(),
     isActive: true,
   };
 
@@ -65,11 +65,11 @@ const onSubmit = handleSubmit(handleLessonEdit);
 </script>
 
 <template>
-  <form
-    @submit.prevent="onSubmit"
+  <div
     class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center bg-[#000]/70 z-30"
   >
-    <div
+    <form
+      @submit.prevent="onSubmit"
       class="w-[90%] max-w-[24rem] flex flex-col items-center p-4 gap-4 md:gap-8 bg-[#D9D9D9] rounded-xl pb-8 z-40"
     >
       <p class="text-xl">Zmiana danych oferty</p>
@@ -153,7 +153,7 @@ const onSubmit = handleSubmit(handleLessonEdit);
           v-if="!loading && !meta.valid"
           class="w-[8rem] h-[2.5rem] bg-[#444]/70 text-[#eee] rounded-lg"
         >
-          Dodaj
+          Potwierdź
         </button>
         <button
           v-if="loading"
@@ -162,6 +162,6 @@ const onSubmit = handleSubmit(handleLessonEdit);
           <i class="pi pi-spinner pi-spin"></i>
         </button>
       </span>
-    </div>
-  </form>
+    </form>
+  </div>
 </template>

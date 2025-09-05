@@ -1,29 +1,13 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components";
 
-const contactData = {
-  name_surname: "Jan Kowalski",
-  email: "example.english@email.com",
-  phone_number: "+48 123 456 789",
-};
+const { contactData, socialsData, fetchContactData, fetchSocialMediaData } =
+  useContact();
 
-const socialMediaData = [
-  {
-    platform: "facebook",
-    name: "English Example",
-    link: "https://www.facebook.com",
-  },
-  {
-    platform: "instagram",
-    name: "english.example",
-    link: "https://www.instagram.com",
-  },
-  {
-    platform: "linkedin",
-    name: "Jan Kowalski",
-    link: "https://www.linkedin.com",
-  },
-];
+onMounted(async () => {
+  await fetchContactData();
+  await fetchSocialMediaData();
+});
 </script>
 
 <template>
@@ -57,14 +41,14 @@ const socialMediaData = [
     <div
       class="w-[50%] md:w-[50%] h-full flex flex-col items-end md:items-center gap-4"
     >
-      <span class="flex items-center gap-2">
+      <span v-if="contactData?.phone_number" class="flex items-center gap-2">
         <i class="pi pi-phone text-[#273153] text-xs"></i>
         <p class="text-xs md:text-lg text-[#273153] font-semibold">
           {{ contactData.phone_number }}
         </p>
       </span>
 
-      <span class="flex items-center gap-2">
+      <span v-if="contactData?.email" class="flex items-center gap-2">
         <i class="pi pi-envelope text-[#273153] text-xs"></i>
         <p class="text-xs md:text-lg text-[#273153] font-semibold">
           {{ contactData.email }}
@@ -73,14 +57,14 @@ const socialMediaData = [
 
       <span class="flex items-center gap-4 md:gap-8">
         <NuxtLink
-          v-for="(socialMedia, id) in socialMediaData"
-          :key="id"
-          :to="socialMedia.link"
+          v-for="social in socialsData?.filter((s) => s.link)"
+          :key="social.id"
+          :to="social.link"
           class="hover:cursor-pointer"
         >
           <i
             :class="[
-              `pi pi-${socialMedia.platform}`,
+              `pi pi-${social.platform}`,
               'text-2xl text-[#273153] hover:text-[#485B99] active:text-[#485B99]',
             ]"
           />
