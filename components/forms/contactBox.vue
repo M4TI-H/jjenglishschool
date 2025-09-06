@@ -2,6 +2,9 @@
 import { useField, useForm } from "vee-validate";
 import { z } from "zod";
 import { toTypedSchema } from "@vee-validate/zod";
+import emailjs from "@emailjs/browser";
+
+emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 const validationSchema = toTypedSchema(
   z.object({
@@ -29,7 +32,44 @@ const { value: phone_number, errorMessage: phoneError } =
   useField<string>("phone_number");
 const { value: email, errorMessage: emailError } = useField<string>("email");
 
-const handleSignUser = async () => {};
+const formatDate = (date: Date) => {
+  return date.toLocaleString(undefined, {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    hour12: false,
+    minute: "2-digit",
+    second: "2-digit",
+  });
+};
+
+const loading = ref<boolean>(false);
+const handleSignUser = async () => {
+  loading.value = true;
+  const params = {
+    name_surname: name_surname.value,
+    phone_number: phone_number.value,
+    email: email.value,
+    time: formatDate(new Date()),
+  };
+
+  try {
+    await emailjs.send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      params
+    );
+    name_surname.value = "";
+    phone_number.value = "";
+    email.value = "";
+
+    alert("Pomyślnie wysłano zgłoszenie!");
+  } catch (error: any) {
+    alert("Błąd przy wysyłaniu zgłoszenia! Spróbuj ponownie za chwilę.");
+  }
+  loading.value = false;
+};
 
 const onSubmit = handleSubmit(handleSignUser);
 </script>
@@ -88,7 +128,7 @@ const onSubmit = handleSubmit(handleSignUser);
       </div>
 
       <button
-        v-if="meta.valid"
+        v-if="!loading && meta.valid"
         type="submit"
         class="w-[16rem] h-[3rem] bg-[#228ee3] text-[#eee] rounded-md hover:bg-[#1968a5] hover:cursor-pointer active:bg-[#1968a5] self-end"
       >
@@ -97,13 +137,18 @@ const onSubmit = handleSubmit(handleSignUser);
         </span>
       </button>
       <button
-        v-if="!meta.valid"
-        type="submit"
+        v-if="!loading && !meta.valid"
         class="w-[16rem] h-[3rem] bg-[#228ee3]/30 text-[#eee] rounded-md self-end"
       >
         <span class="flex items-center justify-center gap-6">
           Wyślij zgłoszenie <i class="pi pi-angle-right text-lg"></i>
         </span>
+      </button>
+      <button
+        v-if="loading"
+        class="w-[16rem] h-[3rem] bg-[#228ee3]/30 text-[#eee] rounded-md self-end"
+      >
+        <i class="pi pi-spinner pi-spin"></i>
       </button>
     </form>
   </section>

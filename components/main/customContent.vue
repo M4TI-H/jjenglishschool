@@ -11,7 +11,7 @@ onMounted(async () => {
     class="w-full xl:w-[80%] max-w-[72rem] flex flex-col items-center justify-center py-4 px-4 md:px-28 gap-4"
   >
     <h2 class="text-3xl text-[#DECFA7] font-semibold">O mnie</h2>
-    <div
+    <article
       v-for="text in customContentData"
       :key="text.id"
       class="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-4"
@@ -42,6 +42,6 @@ onMounted(async () => {
           class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
         />
       </div>
-    </div>
+    </article>
   </section>
 </template>

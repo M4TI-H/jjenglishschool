@@ -1,4 +1,15 @@
 <script setup lang="ts">
+useHead({
+  title: "JJ English School | Oferta",
+  meta: [
+    {
+      name: "description",
+      content:
+        "JJ English School | oferuję lekcje angielskiego online i stacjonarnie: konwersacje, przygotowanie do egzaminów, korepetycje dla dzieci i dorosłych, plan nauki dopasowany do Ciebie.",
+    },
+  ],
+});
+
 const { loading, activeLessonsData, fetchActiveLessons } = useLessons();
 
 onMounted(async () => {

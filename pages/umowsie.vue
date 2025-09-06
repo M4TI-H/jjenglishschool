@@ -1,5 +1,15 @@
 <script setup lang="ts">
 import { ref } from "vue";
+useHead({
+  title: "JJ English School |Umów się",
+  meta: [
+    {
+      name: "description",
+      content:
+        "JJ English School | zarezerwuj pierwsze spotkanie już dziś, wspólnie ustalimy Twój cel i plan nauki angielskiego",
+    },
+  ],
+});
 
 const showRegularStudent = ref<boolean>(false);
 const showNewStudent = ref<boolean>(false);

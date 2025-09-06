@@ -1,4 +1,15 @@
 <script setup lang="ts">
+useHead({
+  title: "JJ English School | Kontakt",
+  meta: [
+    {
+      name: "description",
+      content:
+        "JJ English School | masz pytania o zajęcia, chcesz lekcję próbną lub indywidualny plan nauki? Skontaktuj się, a pomogę znaleźć najlepsze rozwiązanie dla Ciebie.",
+    },
+  ],
+});
+
 const { contactData, socialsData, fetchContactData, fetchSocialMediaData } =
   useContact();
 

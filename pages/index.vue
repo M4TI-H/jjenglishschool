@@ -1,4 +1,15 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+useHead({
+  title: "JJ English School | Lekcje angielskiego",
+  meta: [
+    {
+      name: "description",
+      content:
+        "JJ English School | skuteczne lekcje angielskiego online i w Trójmieście. Indywidualne podejście, przygotowanie do egzaminów i swobodne konwersacje.",
+    },
+  ],
+});
+</script>
 
 <template>
   <HamburgerMenu />

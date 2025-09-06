@@ -4,6 +4,7 @@
   >
     <img
       src="https://images.unsplash.com/photo-1511000875836-1333567a03af?q=80&w=1186&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+      alt="Background image"
       class="w-full h-full object-cover z-10"
     />
     <div

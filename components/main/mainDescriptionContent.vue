@@ -31,7 +31,7 @@
     </div>
     <img
       src="/logo.png"
-      alt="logo"
+      alt="Logo JJ English School"
       class="w-[10em] md:w-[12rem] lg:w-[20rem] h-[15rem] md:h-[18rem] lg:h-[30rem] hidden md:block"
     />
   </section>
