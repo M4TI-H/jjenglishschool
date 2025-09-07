@@ -24,7 +24,6 @@ useHead({
     <!-- Short text -->
     <MainDescriptionContent />
 
-    <section class="w-full h-72 text-center">Tu będzie mapka</section>
     <MainCustomContent id="omnie" />
     <MainCatalogue id="oferta" />
   </main>

@@ -7,9 +7,7 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section
-    class="w-full bg-[#0e121e] p-4 flex flex-col justify-center items-center gap-8"
-  >
+  <section class="w-full p-4 flex flex-col justify-center items-center gap-8">
     <h2 class="text-3xl text-[#DECFA7] font-semibold">Oferta</h2>
     <div
       class="max-w-[60rem] w-full h-full border-3 border-[#DECFA7] border-dashed rounded-xl flex flex-col items-center p-2"

@@ -8,7 +8,7 @@ onMounted(async () => {
 
 <template>
   <section
-    class="w-full xl:w-[80%] max-w-[72rem] flex flex-col items-center justify-center py-4 px-4 md:px-28 gap-4"
+    class="w-full xl:w-[80%] bg-[#0e121e] rounded-xl max-w-[72rem] flex flex-col items-center justify-center py-4 px-4 md:px-28 gap-4"
   >
     <h2 class="text-3xl text-[#DECFA7] font-semibold">O mnie</h2>
     <article
