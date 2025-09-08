@@ -63,7 +63,7 @@ const onSubmit = handleSubmit(handleLessonEdit);
       class="w-[90%] max-w-[24rem] flex flex-col items-center p-4 gap-4 md:gap-8 bg-[#D9D9D9] rounded-xl pb-8 z-40"
     >
       <p class="text-xl">Zmiana danych kontaktowych</p>
-      <div class="w-full flex flex-col gap-1">
+      <div class="w-full h-[6rem] flex flex-col gap-1">
         <span class="flex items-center gap-2">
           <i class="pi pi-user md:text-lg text-[#777]"></i>
           <p class="md:text-lg text-[#777]">Imię i nazwisko</p>
@@ -73,9 +73,10 @@ const onSubmit = handleSubmit(handleLessonEdit);
           v-model="name_surname"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
         />
+        <p class="h-[1rem] text-sm text-red-500 ml-2">{{ nameError }}</p>
       </div>
 
-      <div class="w-full flex flex-col gap-1">
+      <div class="w-full h-[6rem] flex flex-col gap-1">
         <span class="flex items-center gap-2">
           <i class="pi pi-phone md:text-lg text-[#777]"></i>
           <p class="md:text-lg text-[#777]">Numer telefonu</p>
@@ -85,9 +86,10 @@ const onSubmit = handleSubmit(handleLessonEdit);
           v-model="phone_number"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
         />
+        <p class="h-[1rem] text-sm text-red-500 ml-2">{{ nameError }}</p>
       </div>
 
-      <div class="w-full flex flex-col gap-1">
+      <div class="w-full h-[6rem] flex flex-col gap-1">
         <span class="flex items-center gap-2">
           <i class="pi pi-envelope md:text-lg text-[#777]"></i>
           <p class="md:text-lg text-[#777]">E-mail</p>
@@ -97,6 +99,7 @@ const onSubmit = handleSubmit(handleLessonEdit);
           v-model="email"
           class="bg-[#eee] w-full h-[2.5rem] rounded-lg outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
         />
+        <p class="h-[1rem] text-sm text-red-500 ml-2">{{ nameError }}</p>
       </div>
       <span class="w-full flex justify-around">
         <button

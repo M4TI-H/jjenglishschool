@@ -10,5 +10,9 @@ export default defineEventHandler(async (event) => {
     throw createError({ statusCode: 500, statusMessage: error.message });
   }
 
-  return data[0] as ContactData;
+  if (!data || data.length === 0) {
+    return { success: true, data: null };
+  }
+
+  return { success: true, data: data[0] as ContactData };
 });
