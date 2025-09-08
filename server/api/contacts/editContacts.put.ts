@@ -9,7 +9,7 @@ export default defineEventHandler(async (event) => {
   }
 
   const body = await readBody<{
-    name_username: string;
+    name_surname: string;
     phone_number: string;
     email: string;
   }>(event);
@@ -17,7 +17,7 @@ export default defineEventHandler(async (event) => {
   const { error } = await supabase
     .from("contact")
     .update({
-      name_username: body.name_username,
+      name_surname: body.name_surname,
       phone_number: body.phone_number,
       email: body.email,
     })

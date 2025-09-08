@@ -12,12 +12,15 @@ const refreshData = async () => {
   await fetchSocialMediaData();
 };
 
+const displayContact = computed(() => contactData.value ?? null);
+
 const displayContactDataForm = ref<boolean>(false);
 const displaySocialDataForm = ref<boolean>(false);
 
 onMounted(async () => {
   await fetchContactData();
   await fetchSocialMediaData();
+  console.log(contactData.value);
 });
 </script>
 
@@ -49,6 +52,7 @@ onMounted(async () => {
     >
       <div class="w-full flex flex-col md:flex-row justify-center gap-8">
         <div
+          v-if="displayContact"
           class="relative w-full lg:h-[32rem] md:w-1/2 md:max-w-[36rem] flex flex-col gap-2 p-4 bg-[#D9D9D9] rounded-lg"
         >
           <h3 class="text-xl text-[#444]">Dane osobiste</h3>
@@ -58,7 +62,7 @@ onMounted(async () => {
               <p class="md:text-lg text-[#777]">Imię i nazwisko</p>
             </span>
             <p class="text-lg ml-2">
-              {{ contactData?.name_surname }}
+              {{ displayContact.name_surname }}
             </p>
           </div>
 
@@ -68,7 +72,7 @@ onMounted(async () => {
               <p class="md:text-lg text-[#777]">Numer telefonu</p>
             </span>
             <p class="text-lg ml-2">
-              {{ contactData?.phone_number }}
+              {{ displayContact.phone_number }}
             </p>
           </div>
           <div class="flex flex-col justify-center">
@@ -77,7 +81,7 @@ onMounted(async () => {
               <p class="md:text-lg text-[#777]">E-mail</p>
             </span>
             <p class="text-lg ml-2">
-              {{ contactData?.email }}
+              {{ displayContact.email }}
             </p>
           </div>
           <button
