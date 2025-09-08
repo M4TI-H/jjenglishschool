@@ -1,5 +1,4 @@
 import { serverSupabaseClient } from "#supabase/server";
-import type { ContactData } from "~/types/contact";
 
 export default defineEventHandler(async (event) => {
   const supabase = await serverSupabaseClient(event);

@@ -336,5 +336,16 @@ using (true);
   to authenticated
 using (true);
 
+INSERT INTO public.social_media (id, platform, username, link)
+VALUES 
+(1, 'facebook', null, null),
+(2, 'instagram', null, null),
+(3, 'linkedin', null, null),
+(4, 'twitter', null, null),
+(5, 'yooutube', null, null);
+
+INSERT INTO public.contact (id, name_surname, phone_number, email)
+VALUES
+(1, 'Jan Kowalski', '+48 111 222 333', 'jan.kowalski@gmail.com');
 
 

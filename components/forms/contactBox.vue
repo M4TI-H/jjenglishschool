@@ -2,9 +2,6 @@
 import { useField, useForm } from "vee-validate";
 import { z } from "zod";
 import { toTypedSchema } from "@vee-validate/zod";
-import emailjs from "@emailjs/browser";
-
-emailjs.init(import.meta.env.VITE_EMAILJS_PUBLIC_KEY);
 
 const validationSchema = toTypedSchema(
   z.object({
@@ -54,20 +51,21 @@ const handleSignUser = async () => {
     time: formatDate(new Date()),
   };
 
-  try {
-    await emailjs.send(
-      import.meta.env.VITE_EMAILJS_SERVICE_ID,
-      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
-      params
-    );
+  const { error } = await fetchData<null>("/api/send_email", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(params),
+  });
+
+  if (error) {
+    alert("Nastąpił błąd przy wysyłąniu zgłoszenia. Spróbuj ponownie!");
+  } else {
     name_surname.value = "";
     phone_number.value = "";
     email.value = "";
-
     alert("Pomyślnie wysłano zgłoszenie!");
-  } catch (error: any) {
-    alert("Błąd przy wysyłaniu zgłoszenia! Spróbuj ponownie za chwilę.");
   }
+
   loading.value = false;
 };
 

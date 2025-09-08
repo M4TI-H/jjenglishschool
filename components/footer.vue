@@ -42,14 +42,14 @@ onMounted(async () => {
       class="w-[50%] md:w-[50%] h-full flex flex-col items-end md:items-center gap-4"
     >
       <span v-if="contactData?.phone_number" class="flex items-center gap-2">
-        <i class="pi pi-phone text-[#273153] text-xs"></i>
+        <i class="pi pi-phone text-[#273153] text-md"></i>
         <p class="text-xs md:text-lg text-[#273153] font-semibold">
           {{ contactData.phone_number }}
         </p>
       </span>
 
       <span v-if="contactData?.email" class="flex items-center gap-2">
-        <i class="pi pi-envelope text-[#273153] text-xs"></i>
+        <i class="pi pi-envelope text-[#273153] text-md"></i>
         <p class="text-xs md:text-lg text-[#273153] font-semibold">
           {{ contactData.email }}
         </p>
