@@ -17,13 +17,14 @@ useHead({
   <ScrollToTop />
 
   <main class="min-h-screen flex flex-col items-center bg-black">
-    <Hero />
+    <Hero id="start" />
     <Description />
 
     <!-- <MainTitlePanel /> -->
 
     <MainCustomContent id="omnie" />
     <MainCatalogue id="oferta" />
+    <ContactBox id="kontakt" />
   </main>
   <Footer />
 </template>

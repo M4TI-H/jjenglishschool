@@ -73,81 +73,88 @@ const onSubmit = handleSubmit(handleSignUser);
 </script>
 
 <template>
-  <section class="w-full flex items-center justify-center mb-16">
+  <section class="relative w-full max-w-5xl mx-auto mt-12 md:mt-16 mb-16">
+    <div class="px-4 md:px-6">
+      <h2 class="text-3xl text-[#DECFA7] font-extrabold mb-4">Kontakt</h2>
+    </div>
     <form
       @submit="onSubmit"
-      class="w-full md:w-[40%] bg-[#d9d9d9] rounded-lg flex flex-col items-center gap-6 px-8 py-12"
+      class="mx-4 md:mx-6 bg-black/60 backdrop-blur-sm rounded-2xl md:rounded-4xl shadow-xl w-auto max-w-full md:max-w-3xl p-6 md:p-10"
     >
-      <span
-        class="h-[4rem] w-full max-w-[35rem] bg-[#228ee3] flex items-center p-4 px-8 rounded-md"
-      >
-        <p class="text-xl md:text-2xl text-white">Zapisz się!</p>
-      </span>
-      <div class="w-full h-[7rem] flex flex-col items-center">
-        <p class="text-sm self-start text-[#444] font-semibold ml-2 mb-2">
-          Imię i nazwisko
-        </p>
-        <input
-          type="text"
-          v-model="name_surname"
-          class="bg-[#eee] w-full h-[3rem] rounded-md outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <p v-if="nameError" class="text-sm self-start text-red-500 ml-2 mt-2">
-          {{ nameError }}
-        </p>
+      <div class="grid grid-cols-1 gap-6">
+        <div>
+          <label class="block text-sm text-[#DECFA7] font-semibold mb-2"
+            >Imię i nazwisko</label
+          >
+          <input
+            type="text"
+            v-model="name_surname"
+            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-blue-500 focus:outline-none px-3"
+            placeholder="Jan Kowalski"
+          />
+          <p v-if="nameError" class="text-sm text-red-400 mt-2">
+            {{ nameError }}
+          </p>
+        </div>
+
+        <div>
+          <label class="block text-sm text-[#DECFA7] font-semibold mb-2"
+            >Numer telefonu</label
+          >
+          <input
+            type="text"
+            v-model="phone_number"
+            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-blue-500 focus:outline-none px-3"
+            placeholder="123 456 789"
+          />
+          <p v-if="phoneError" class="text-sm text-red-400 mt-2">
+            {{ phoneError }}
+          </p>
+        </div>
+
+        <div>
+          <label class="block text-sm text-[#DECFA7] font-semibold mb-2"
+            >Adres e-mail</label
+          >
+          <input
+            type="email"
+            v-model="email"
+            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-blue-500 focus:outline-none px-3"
+            placeholder="jan@przyklad.pl"
+          />
+          <p v-if="emailError" class="text-sm text-red-400 mt-2">
+            {{ emailError }}
+          </p>
+        </div>
       </div>
 
-      <div class="w-full h-[7rem] flex flex-col items-center">
-        <p class="text-sm self-start text-[#444] font-semibold ml-2 mb-2">
-          Numer telefonu
-        </p>
-        <input
-          type="text"
-          v-model="phone_number"
-          class="bg-[#eee] w-full h-[3rem] rounded-md outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <p v-if="phoneError" class="text-sm self-start text-red-500 ml-2 mt-2">
-          {{ phoneError }}
-        </p>
+      <div class="mt-8 flex justify-end">
+        <button
+          v-if="!loading && meta.valid"
+          type="submit"
+          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow transition-colors"
+        >
+          <span class="flex items-center gap-2">
+            Wyślij zgłoszenie <i class="pi pi-angle-right text-lg"></i>
+          </span>
+        </button>
+        <button
+          v-else-if="!loading && !meta.valid"
+          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-blue-600/40 text-white/80 font-semibold rounded-lg cursor-not-allowed"
+          type="button"
+        >
+          <span class="flex items-center gap-2">
+            Wyślij zgłoszenie <i class="pi pi-angle-right text-lg"></i>
+          </span>
+        </button>
+        <button
+          v-else
+          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-blue-600/40 text-white font-semibold rounded-lg"
+          type="button"
+        >
+          <i class="pi pi-spinner pi-spin"></i>
+        </button>
       </div>
-
-      <div class="w-full h-[7rem] flex flex-col items-center">
-        <p class="text-sm self-start text-[#444] font-semibold ml-2 mb-2">
-          Adres e-mail
-        </p>
-        <input
-          type="text"
-          v-model="email"
-          class="bg-[#eee] w-full h-[3rem] rounded-md outline-0 focus:outline-1 focus:outline-[#444] px-2 font-semibold"
-        />
-        <p v-if="emailError" class="text-sm self-start text-red-500 ml-2 mt-2">
-          {{ emailError }}
-        </p>
-      </div>
-
-      <button
-        v-if="!loading && meta.valid"
-        type="submit"
-        class="w-[16rem] h-[3rem] bg-[#228ee3] text-[#eee] rounded-md hover:bg-[#1968a5] hover:cursor-pointer active:bg-[#1968a5] self-end"
-      >
-        <span class="flex items-center justify-center gap-6">
-          Wyślij zgłoszenie <i class="pi pi-angle-right text-lg"></i>
-        </span>
-      </button>
-      <button
-        v-if="!loading && !meta.valid"
-        class="w-[16rem] h-[3rem] bg-[#228ee3]/30 text-[#eee] rounded-md self-end"
-      >
-        <span class="flex items-center justify-center gap-6">
-          Wyślij zgłoszenie <i class="pi pi-angle-right text-lg"></i>
-        </span>
-      </button>
-      <button
-        v-if="loading"
-        class="w-[16rem] h-[3rem] bg-[#228ee3]/30 text-[#eee] rounded-md self-end"
-      >
-        <i class="pi pi-spinner pi-spin"></i>
-      </button>
     </form>
   </section>
 </template>

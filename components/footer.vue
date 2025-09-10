@@ -23,19 +23,19 @@ onMounted(async () => {
         ><p>Strona główna</p></NuxtLink
       >
       <NuxtLink
-        to="/oferta"
+        to="/#oferta"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
         ><p>Oferta</p></NuxtLink
       >
       <NuxtLink
-        to="/kontakt"
+        to="/#omnie"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        ><p>Kontakt</p></NuxtLink
+        ><p>O mnie</p></NuxtLink
       >
       <NuxtLink
-        to="/umowsie"
+        to="/#kontakt"
         class="text-xs md:text-lg text-[#273153] font-semibold hover:text-[#485B99] hover:cursor-pointer active:text-[#485B99]"
-        ><p>Umów się</p></NuxtLink
+        ><p>Kontakt</p></NuxtLink
       >
     </div>
     <div

@@ -14,7 +14,7 @@
       </NuxtLink>
 
       <NuxtLink
-        to="/oferta"
+        to="/#oferta"
         class="w-[4rem] lg:w-[8rem] text-[#DECFA7] text-sm lg:text-lg hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A] text-center transition duration-150 ease-in-out"
         ><p>Oferta</p></NuxtLink
       >
@@ -26,13 +26,13 @@
       >
 
       <NuxtLink
-        to="/kontakt"
+        to="/#kontakt"
         class="w-[4rem] lg:w-[8rem] text-[#DECFA7] text-sm lg:text-lg hover:cursor-pointer hover:text-[#CDB67A] active:text-[#CDB67A] text-center transition duration-150 ease-in-out"
         ><p>Kontakt</p></NuxtLink
       >
     </div>
     <NuxtLink
-      to="/umowsie"
+      to="/#kontakt"
       class="flex items-center justify-center min-w-[10em] lg:w-[12rem] lg:text-md h-12 bg-[#DECFA7] rounded-lg hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A] transition duration-150 ease-in-out"
     >
       <p>Umów się na zajęcia</p>

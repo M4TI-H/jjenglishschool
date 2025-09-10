@@ -26,9 +26,9 @@ await fetchActiveLessons();
           {{ oferta.price }} zł
         </p>
         <NuxtLink
-          :to="`/oferta`"
+          to="/#kontakt"
           class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition-all duration-200 mt-auto"
-          >Poznaj szczegóły</NuxtLink
+          >Zapisz się</NuxtLink
         >
       </div>
     </div>
