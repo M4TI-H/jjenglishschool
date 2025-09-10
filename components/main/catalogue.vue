@@ -1,38 +1,36 @@
 <script setup lang="ts">
 const { activeLessonsData, fetchActiveLessons } = useLessons();
 
-onMounted(async () => {
-  await fetchActiveLessons();
-});
+// onMounted(async () => {
+await fetchActiveLessons();
+// });
 </script>
 
 <template>
-  <section class="w-full p-4 flex flex-col justify-center items-center gap-8">
-    <h2 class="text-3xl text-[#DECFA7] font-semibold">Oferta</h2>
+  <section class="relative w-full max-w-5xl mx-auto mt-12 md:mt-16 mb-16">
+    <div class="px-4 md:px-6">
+      <h2 class="text-3xl text-[#DECFA7] font-extrabold mb-4">Oferta</h2>
+    </div>
     <div
-      class="max-w-[60rem] w-full h-full border-3 border-[#DECFA7] border-dashed rounded-xl flex flex-col items-center p-2"
+      class="w-full px-4 md:px-6 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
     >
-      <div class="w-full flex flex-col gap-8 p-2">
-        <span
-          v-for="(oferta, id) in activeLessonsData"
-          :key="id"
-          class="w-full flex justify-between items-end"
+      <div
+        v-for="(oferta, id) in activeLessonsData"
+        :key="id"
+        class="bg-black/60 backdrop-blur-sm rounded-2xl shadow-lg p-6 flex flex-col justify-between items-start hover:scale-[1.02] hover:shadow-2xl transition-all duration-200 border border-blue-600/60"
+      >
+        <p class="text-xl text-[#DECFA7] font-semibold mb-2">
+          {{ oferta.name }}
+        </p>
+        <p class="text-lg text-blue-400 font-bold mb-4">
+          {{ oferta.price }} zł
+        </p>
+        <NuxtLink
+          :to="`/oferta`"
+          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-6 rounded-lg shadow transition-all duration-200 mt-auto"
+          >Poznaj szczegóły</NuxtLink
         >
-          <p class="text-lg text-[#DECFA7] max-w-[70%]">
-            {{ oferta.name }}
-          </p>
-          <p class="text-lg text-[#DECFA7] font-semibold">
-            {{ oferta.price }} zł
-          </p>
-        </span>
-        <p class="text-lg text-[#DECFA7]">I więcej...</p>
       </div>
     </div>
-    <NuxtLink
-      to="/oferta"
-      class="flex items-center justify-center min-w-[10em] lg:w-[12rem] lg:text-md h-12 bg-[#DECFA7] rounded-lg hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A] transition duration-150 ease-in-out"
-    >
-      <p>Poznaj szczegóły</p>
-    </NuxtLink>
   </section>
 </template>

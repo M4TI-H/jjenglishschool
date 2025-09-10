@@ -7,39 +7,38 @@ onMounted(async () => {
 </script>
 
 <template>
-  <section
-    class="w-full xl:w-[80%] bg-[#0e121e] rounded-xl max-w-[72rem] flex flex-col items-center justify-center py-4 px-4 md:px-28 gap-4"
-  >
-    <h2 class="text-3xl text-[#DECFA7] font-semibold">O mnie</h2>
+  <section class="relative w-full max-w-5xl mx-auto mt-12 md:mt-16 mb-16">
+    <div class="px-4 md:px-6">
+      <h2 class="text-3xl text-[#DECFA7] font-extrabold mb-4">O mnie</h2>
+    </div>
     <article
       v-for="text in customContentData"
       :key="text.id"
-      class="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-4"
+      class="w-full flex flex-col md:flex-row justify-between items-center md:items-start gap-6 bg-black/60 backdrop-blur-sm rounded-2xl md:rounded-4xl shadow-xl p-6 md:p-10 mb-4"
     >
-      <span class="flex flex-col gap-2">
-        <span class="w-full flex items-center gap-4">
+      <div class="flex flex-col gap-4 flex-1">
+        <div class="flex items-center gap-4 mb-2">
           <div class="flex-1 h-[2px] bg-[#DECFA7]"></div>
           <h3
-            class="flex-shrink-0 text-xl md:text-2xl text-[#DECFA7] font-semibold text-center md:text-left"
+            class="flex-shrink-0 text-2xl md:text-3xl text-[#DECFA7] font-bold text-center md:text-left"
           >
             {{ text.header }}
           </h3>
           <div class="flex-1 h-[2px] bg-[#DECFA7]"></div>
-        </span>
-
+        </div>
         <p
-          class="text-[#DECFA7] md:text-lg text-center md:text-left max-w-[28rem]"
+          class="text-[#DECFA7] text-lg md:text-xl text-center md:text-left max-w-2xl"
         >
           {{ text.paragraph }}
         </p>
-      </span>
+      </div>
       <div
-        class="w-[20rem] md:w-[16rem] md:h-[12rem] xl:w-[24rem] xl:h-[16rem] rounded-bl-2xl rounded-tr-2xl border-6 border-white overflow-hidden"
+        class="w-64 h-48 md:w-80 md:h-56 xl:w-96 xl:h-64 rounded-2xl overflow-hidden shadow-2xl border-4 border-blue-600 bg-[#1A2137] flex-shrink-0"
       >
         <img
           :src="text.image_url"
           :alt="text.image_name"
-          class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-110"
+          class="w-full h-full object-cover transition-transform duration-500 ease-in-out hover:scale-105 hover:rotate-1"
         />
       </div>
     </article>
