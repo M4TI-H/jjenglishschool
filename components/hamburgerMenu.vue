@@ -10,14 +10,11 @@ function toggleMenu() {
 
 <template>
   <header
-    class="w-full h-16 sticky md:hidden flex justify-between pr-2 items-center bg-[#0e121e] z-30"
+    class="w-full h-16 sticky md:hidden flex justify-between px-2 items-center bg-[##1E2137] z-30"
   >
-    <NuxtLink to="/">
-      <img
-        class="h-full w-18 hover:cursor-pointer"
-        src="/logo.png"
-        alt="Logo"
-      />
+    <div class="size-10"></div>
+    <NuxtLink to="/" class="h-[80%]">
+      <img class="h-full hover:cursor-pointer" src="/logo.png" alt="Logo" />
     </NuxtLink>
     <button
       @click="toggleMenu"
@@ -32,33 +29,30 @@ function toggleMenu() {
     >
       <NuxtLink
         to="/#oferta"
-        class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e] flex items-center justify-center"
+        class="w-full min-h-16 py-2 text-lg text-white active:bg-[#0e121e] flex items-center justify-center"
       >
         <p>Oferta</p>
       </NuxtLink>
 
       <NuxtLink
         to="/#omnie"
-        class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e] flex items-center justify-center"
+        class="w-full min-h-16 py-2 text-lg text-white active:bg-[#0e121e] flex items-center justify-center"
       >
         <p>O mnie</p>
       </NuxtLink>
 
       <NuxtLink
         to="/#kontakt"
-        class="w-full min-h-16 py-2 text-lg text-white font-semibold active:bg-[#0e121e] flex items-center justify-center"
+        class="w-full min-h-16 py-2 text-lg text-white active:bg-[#0e121e] flex items-center justify-center"
       >
         <p>Kontakt</p>
       </NuxtLink>
-
-      <div class="min-h-16 py-2">
-        <NuxtLink
-          to="/#kontakt"
-          class="flex items-center justify-center w-44 lg:text-md h-10 bg-[#DECFA7] rounded-lg font-semibold hover:cursor-pointer hover:bg-[#CDB67A] active:bg-[#CDB67A]"
-        >
-          <p>Zapisz się na zajęcia</p>
-        </NuxtLink>
-      </div>
+      <NuxtLink
+        to="/#zapiszsie"
+        class="w-full min-h-16 py-2 text-lg text-white active:bg-[#0e121e] flex items-center justify-center"
+      >
+        <p>Zapisz się</p>
+      </NuxtLink>
     </div>
     <div
       v-show="isMenuOpened"

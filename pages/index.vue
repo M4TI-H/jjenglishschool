@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import Contacts from "~/components/main/contacts.vue";
+import MakeAppointment from "~/components/main/makeAppointment.vue";
+
 useHead({
   title: "JJ English School | Lekcje angielskiego",
   meta: [
@@ -16,7 +19,7 @@ useHead({
   <NavMenu />
   <ScrollToTop />
 
-  <main class="min-h-screen flex flex-col items-center bg-black">
+  <main class="min-h-screen flex flex-col items-center bg-[#0e121e]">
     <Hero id="start" />
     <Description />
 
@@ -24,7 +27,8 @@ useHead({
 
     <MainCustomContent id="omnie" />
     <MainCatalogue id="oferta" />
-    <ContactBox id="kontakt" />
+    <Contacts id="kontakt" />
+    <MakeAppointment id="zapiszsie" />
   </main>
   <Footer />
 </template>

@@ -19,10 +19,7 @@ const validationSchema = toTypedSchema(
   z.object({
     header: z.string().min(1, "Pole jest wymagane!"),
     paragraph: z.string().min(1, "Pole jest wymagane!"),
-    imageUrl: z
-      .string()
-      .min(1, "Pole jest wymagane!")
-      .url("Podaj poprawny link"),
+    imageUrl: z.string().url("Podaj poprawny link").or(z.literal("")),
   })
 );
 

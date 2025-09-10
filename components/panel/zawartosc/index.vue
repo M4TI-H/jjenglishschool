@@ -81,6 +81,7 @@ onMounted(async () => {
           <p class="md:text-lg text-[#777]">Element #{{ id + 1 }}</p>
 
           <img
+            v-if="part.image_url"
             :src="part.image_url"
             class="w-full h-[12rem] md:w-[20rem] rounded-lg object-cover"
           />

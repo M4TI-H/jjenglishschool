@@ -73,23 +73,25 @@ const onSubmit = handleSubmit(handleSignUser);
 </script>
 
 <template>
-  <section class="relative w-full max-w-5xl mx-auto mt-12 md:mt-16 mb-16">
-    <div class="px-4 md:px-6">
-      <h2 class="text-3xl text-[#DECFA7] font-extrabold mb-4">Kontakt</h2>
-    </div>
+  <section
+    class="relative flex flex-col items-center w-full mx-auto mt-12 md:mt-16 mb-16"
+  >
     <form
       @submit="onSubmit"
-      class="mx-4 md:mx-6 bg-black/60 backdrop-blur-sm rounded-2xl md:rounded-4xl shadow-xl w-auto max-w-full md:max-w-3xl p-6 md:p-10"
+      class="mx-4 md:mx-6 bg-black/60 backdrop-blur-sm rounded-2xl md:rounded-4xl shadow-xl w-full max-w-[50rem] p-6 md:p-10"
     >
+      <h2 class="text-2xl md:text-3xl text-[#DECFA7] font-bold mb-4">
+        Dane do kontaktu
+      </h2>
       <div class="grid grid-cols-1 gap-6">
         <div>
-          <label class="block text-sm text-[#DECFA7] font-semibold mb-2"
+          <label class="block text-sm text-[#DECFA7] mb-2"
             >Imię i nazwisko</label
           >
           <input
             type="text"
             v-model="name_surname"
-            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-blue-500 focus:outline-none px-3"
+            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-[#445688] focus:outline-none px-3"
             placeholder="Jan Kowalski"
           />
           <p v-if="nameError" class="text-sm text-red-400 mt-2">
@@ -98,14 +100,14 @@ const onSubmit = handleSubmit(handleSignUser);
         </div>
 
         <div>
-          <label class="block text-sm text-[#DECFA7] font-semibold mb-2"
+          <label class="block text-sm text-[#DECFA7] mb-2"
             >Numer telefonu</label
           >
           <input
             type="text"
             v-model="phone_number"
-            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-blue-500 focus:outline-none px-3"
-            placeholder="123 456 789"
+            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-[#445688] focus:outline-none px-3"
+            placeholder="+48 123 456 789"
           />
           <p v-if="phoneError" class="text-sm text-red-400 mt-2">
             {{ phoneError }}
@@ -113,14 +115,12 @@ const onSubmit = handleSubmit(handleSignUser);
         </div>
 
         <div>
-          <label class="block text-sm text-[#DECFA7] font-semibold mb-2"
-            >Adres e-mail</label
-          >
+          <label class="block text-sm text-[#DECFA7] mb-2">Adres e-mail</label>
           <input
             type="email"
             v-model="email"
-            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-blue-500 focus:outline-none px-3"
-            placeholder="jan@przyklad.pl"
+            class="w-full h-12 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-[#445688] focus:outline-none px-3"
+            placeholder="twoj@email.com"
           />
           <p v-if="emailError" class="text-sm text-red-400 mt-2">
             {{ emailError }}
@@ -132,7 +132,7 @@ const onSubmit = handleSubmit(handleSignUser);
         <button
           v-if="!loading && meta.valid"
           type="submit"
-          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow transition-colors"
+          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-[#DECFA7] hover:bg-[#CDB67A] hover:cursor-pointer rounded-lg shadow transition-colors"
         >
           <span class="flex items-center gap-2">
             Wyślij zgłoszenie <i class="pi pi-angle-right text-lg"></i>
@@ -140,7 +140,7 @@ const onSubmit = handleSubmit(handleSignUser);
         </button>
         <button
           v-else-if="!loading && !meta.valid"
-          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-blue-600/40 text-white/80 font-semibold rounded-lg cursor-not-allowed"
+          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-[#DECFA7]/40 rounded-lg cursor-not-allowed"
           type="button"
         >
           <span class="flex items-center gap-2">
@@ -149,7 +149,7 @@ const onSubmit = handleSubmit(handleSignUser);
         </button>
         <button
           v-else
-          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-blue-600/40 text-white font-semibold rounded-lg"
+          class="inline-flex items-center justify-center min-w-[12rem] h-12 bg-[#DECFA7]/40 font-semibold rounded-lg"
           type="button"
         >
           <i class="pi pi-spinner pi-spin"></i>

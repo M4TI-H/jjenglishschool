@@ -15,26 +15,25 @@
       ></video>
 
       <div
-        class="absolute inset-0 w-full h-full bg-black/60 rounded-2xl md:rounded-4xl z-10"
+        class="absolute inset-0 w-full h-full bg-[#0e121e]/60 rounded-2xl md:rounded-4xl z-10"
       ></div>
 
       <div
         class="relative z-20 flex-1 max-w-none md:max-w-lg text-center md:text-left"
       >
-        <h1 class="text-4xl md:text-5xl font-bold text-white mb-6">
+        <h1 class="text-4xl md:text-5xl font-bold text-[#decfa7] mb-6">
           JJ English School
         </h1>
 
-        <p class="text-base md:text-lg text-white mb-8 md:mb-12">
+        <p class="text-base md:text-lg text-[#decfa7] mb-8 md:mb-12">
           Skuteczne lekcje angielskiego online i w Trójmieście.<br />
           Indywidualne podejście, przygotowanie do egzaminów i swobodne
           konwersacje.
         </p>
-
         <a
-          href="#oferta"
-          class="inline-block bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow transition-all duration-200"
-          >Zobacz ofertę</a
+          href="/#oferta"
+          class="inline-block bg-[#2A3553] hover:bg-[#0E121E] hover:cursor-pointer text-white py-3 px-8 rounded-lg shadow transition-all duration-200"
+          >Zapoznaj się z ofertą</a
         >
       </div>
 

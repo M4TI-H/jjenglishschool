@@ -1,9 +1,11 @@
 <template>
   <section class="relative w-full max-w-5xl mx-auto mb-16">
     <div
-      class="relative rounded-2xl md:rounded-4xl shadow-xl bg-black/60 backdrop-blur-sm px-4 md:px-6 py-6 md:py-12"
+      class="relative rounded-2xl md:rounded-4xl shadow-xl bg-[#1E2137]/60 backdrop-blur-sm px-4 md:px-6 py-6 md:py-12"
     >
-      <div class="flex flex-col items-center md:items-start gap-6 text-white">
+      <div
+        class="flex flex-col items-center md:items-start gap-6 text-[#decfa7]"
+      >
         <div class="w-full flex flex-col gap-4">
           <h3 class="text-2xl md:text-3xl font-semibold leading-snug">
             Masz dość wkuwania na pamięć?<br />

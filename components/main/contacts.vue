@@ -18,14 +18,8 @@ onMounted(async () => {
   await fetchSocialMediaData();
 });
 </script>
-
 <template>
-  <HamburgerMenu />
-  <NavMenu />
-  <ScrollToTop />
-  <main
-    class="max-w-screen w-full min-h-screen flex flex-col items-center pb-4 py-8 bg-[#1A2137]"
-  >
+  <section class="max-w-screen w-full flex flex-col items-center py-16">
     <h2 class="text-3xl md:text-4xl text-[#DECFA7] font-semibold mb-8 md:mb-16">
       Kontakt
     </h2>
@@ -100,6 +94,5 @@ onMounted(async () => {
         </div>
       </div>
     </section>
-  </main>
-  <Footer />
+  </section>
 </template>

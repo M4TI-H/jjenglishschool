@@ -14,10 +14,7 @@ const validationSchema = toTypedSchema(
   z.object({
     header: z.string().min(1, "Pole jest wymagane!"),
     paragraph: z.string().min(1, "Pole jest wymagane!"),
-    imageUrl: z
-      .string()
-      .min(1, "Pole jest wymagane!")
-      .url("Podaj poprawny link"),
+    imageUrl: z.string().url("Podaj poprawny link").or(z.literal("")),
   })
 );
 
@@ -107,7 +104,9 @@ const onSubmit = handleSubmit(handlePostElement);
       <div class="w-full h-[6rem] flex flex-col gap-1">
         <span class="flex items-center gap-2">
           <i class="pi pi-image text-lg text-[#777]"></i>
-          <p class="text-lg text-[#777]">URL obrazu</p>
+          <p class="text-lg text-[#777]">
+            URL obrazu <span class="text-xs">(opcjonalnie)</span>
+          </p>
         </span>
         <input
           type="text"
