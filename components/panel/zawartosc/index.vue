@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import type CustomContent from "~/types/customContent";
 
-const { customContentData, fetchCustomContentData } = useContent();
+const { customContentData } = useCustomData();
 
 const selectedElement = ref<CustomContent | null>(null);
 
 const refreshData = async () => {
-  await fetchCustomContentData();
+  useCustomData();
 };
 
 const displayNew = ref<boolean>(false);
@@ -26,10 +26,6 @@ const displayEditModal = (element: CustomContent) => {
   selectedElement.value = element;
   displayEdit.value = !displayEdit.value;
 };
-
-onMounted(async () => {
-  await fetchCustomContentData();
-});
 </script>
 
 <template>

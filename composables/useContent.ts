@@ -1,20 +1,18 @@
 import type CustomContent from "~/types/customContent";
 
+export const useCustomData = () => {
+  const {
+    data: customContentData,
+    pending: loading,
+    error,
+  } = useAsyncData<CustomContent[]>("custom-content", () =>
+    $fetch("/api/content/fetch_all")
+  );
+  return { customContentData, loading, error };
+};
+
 export function useContent() {
   const loading = ref<boolean>(false);
-  const customContentData = ref<CustomContent[]>([]);
-
-  const fetchCustomContentData = async () => {
-    loading.value = true;
-
-    const { data, error } = await fetchData<CustomContent[]>(
-      "/api/content/fetch_all"
-    );
-    if (error) console.error(error);
-    else customContentData.value = data ?? [];
-
-    loading.value = false;
-  };
 
   const postNewCustomElement = async (data: CustomContent) => {
     loading.value = true;
@@ -74,8 +72,6 @@ export function useContent() {
 
   return {
     loading,
-    customContentData,
-    fetchCustomContentData,
     postNewCustomElement,
     editCustomElement,
     deleteCustomElement,

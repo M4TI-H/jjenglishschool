@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const { activeLessonsData, fetchActiveLessons } = useLessons();
-
-// onMounted(async () => {
-await fetchActiveLessons();
-// });
+const { activeLessonsData } = useActiveLessons();
 </script>
 
 <template>

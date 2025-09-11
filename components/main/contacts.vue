@@ -10,13 +10,8 @@ useHead({
   ],
 });
 
-const { contactData, socialsData, fetchContactData, fetchSocialMediaData } =
-  useContact();
-
-onMounted(async () => {
-  await fetchContactData();
-  await fetchSocialMediaData();
-});
+const { contactData } = useContactData();
+const { socialsData } = useSocialsData();
 </script>
 <template>
   <section class="max-w-screen w-full flex flex-col items-center py-16">

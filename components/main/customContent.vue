@@ -1,9 +1,5 @@
 <script setup lang="ts">
-const { customContentData, fetchCustomContentData } = useContent();
-
-onMounted(async () => {
-  await fetchCustomContentData();
-});
+const { customContentData } = useCustomData();
 </script>
 
 <template>

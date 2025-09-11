@@ -1,13 +1,8 @@
 <script setup lang="ts">
 import { NuxtLink } from "#components";
 
-const { contactData, socialsData, fetchContactData, fetchSocialMediaData } =
-  useContact();
-
-onMounted(async () => {
-  await fetchContactData();
-  await fetchSocialMediaData();
-});
+const { contactData } = useContactData();
+const { socialsData } = useSocialsData();
 </script>
 
 <template>

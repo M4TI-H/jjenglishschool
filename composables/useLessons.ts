@@ -1,9 +1,20 @@
 import type Lesson from "~/types/lesson";
 
+export const useActiveLessons = () => {
+  const {
+    data: activeLessonsData,
+    pending: loading,
+    error,
+  } = useAsyncData<Lesson[]>("active-lessons", () =>
+    $fetch("/api/lessons/fetch_active")
+  );
+
+  return { activeLessonsData, loading, error };
+};
+
 export function useLessons() {
   const loading = ref<boolean>(false);
   const lessonsData = ref<Lesson[]>([]);
-  const activeLessonsData = ref<Lesson[]>([]);
 
   const fetchLessons = async () => {
     loading.value = true;
@@ -11,18 +22,6 @@ export function useLessons() {
     const { data, error } = await fetchData<Lesson[]>("/api/lessons/fetch_all");
     if (error) console.error(error);
     else lessonsData.value = data ?? [];
-
-    loading.value = false;
-  };
-
-  const fetchActiveLessons = async () => {
-    loading.value = true;
-
-    const { data, error } = await fetchData<Lesson[]>(
-      "/api/lessons/fetch_active"
-    );
-    if (error) console.error(error);
-    else activeLessonsData.value = data ?? [];
 
     loading.value = false;
   };
@@ -97,12 +96,10 @@ export function useLessons() {
   return {
     loading,
     lessonsData,
-    activeLessonsData,
     fetchLessons,
     postNewLesson,
     deleteLesson,
     editLesson,
     switchActivity,
-    fetchActiveLessons,
   };
 }

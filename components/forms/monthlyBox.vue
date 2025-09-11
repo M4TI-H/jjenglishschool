@@ -27,7 +27,7 @@ onMounted(() => {
 
 <style>
 #bookero-plugin {
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(255, 255, 255, 0.6);
   width: 50rem;
   border-radius: 1rem;
   display: flex;
@@ -47,7 +47,6 @@ onMounted(() => {
 
 #bookero-plugin-service {
   border-radius: 0.375rem;
-  color: #decfa7;
   border: 1px solid rgba(255, 255, 255, 0.1);
   padding-left: 0.75rem;
   padding-right: 0.75rem;

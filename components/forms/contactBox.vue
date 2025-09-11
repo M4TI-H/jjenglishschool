@@ -11,6 +11,7 @@ const validationSchema = toTypedSchema(
       .string()
       .min(1, "*Pole jest wymagane!")
       .email("*Niepoprawny format"),
+    message: z.string().optional(),
   })
 );
 
@@ -20,6 +21,7 @@ const { handleSubmit, meta } = useForm({
     name_surname: "",
     phone_number: "",
     email: "",
+    message: "Dzień dobry, chciałbym nauczyć się angielskiego!",
   },
 });
 
@@ -28,6 +30,8 @@ const { value: name_surname, errorMessage: nameError } =
 const { value: phone_number, errorMessage: phoneError } =
   useField<string>("phone_number");
 const { value: email, errorMessage: emailError } = useField<string>("email");
+const { value: message, errorMessage: messageError } =
+  useField<string>("message");
 
 const formatDate = (date: Date) => {
   return date.toLocaleString(undefined, {
@@ -124,6 +128,19 @@ const onSubmit = handleSubmit(handleSignUser);
           />
           <p v-if="emailError" class="text-sm text-red-400 mt-2">
             {{ emailError }}
+          </p>
+        </div>
+
+        <div>
+          <label class="block text-sm text-[#DECFA7] mb-2"
+            >Twoja wiadomość</label
+          >
+          <textarea
+            v-model="message"
+            class="w-full h-24 rounded-md bg-white/5 text-[#DECFA7] placeholder-white/50 border border-white/10 focus:border-[#445688] focus:outline-none p-3 resize-none"
+          />
+          <p v-if="messageError" class="text-sm text-red-400 mt-2">
+            {{ messageError }}
           </p>
         </div>
       </div>

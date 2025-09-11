@@ -1,27 +1,16 @@
 <script setup lang="ts">
-const {
-  loading,
-  contactData,
-  socialsData,
-  fetchContactData,
-  fetchSocialMediaData,
-} = useContact();
+const { contactData, loading } = useContactData();
+const { socialsData } = useSocialsData();
 
-const refreshData = async () => {
-  await fetchContactData();
-  await fetchSocialMediaData();
+const refreshData = () => {
+  useContactData();
+  useSocialsData();
 };
 
 const displayContact = computed(() => contactData.value ?? null);
 
 const displayContactDataForm = ref<boolean>(false);
 const displaySocialDataForm = ref<boolean>(false);
-
-onMounted(async () => {
-  await fetchContactData();
-  await fetchSocialMediaData();
-  console.log(contactData.value);
-});
 </script>
 
 <template>
