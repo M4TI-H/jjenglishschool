@@ -19,7 +19,7 @@
       ></div>
 
       <div
-        class="relative z-50 flex-1 max-w-none md:max-w-lg text-center md:text-left"
+        class="relative z-30 flex-1 max-w-none md:max-w-lg text-center md:text-left"
       >
         <h1 class="text-4xl md:text-5xl font-bold text-[#decfa7] mb-6">
           JJ English School
@@ -32,7 +32,7 @@
         </p>
         <a
           href="/#oferta"
-          class="inline-block bg-[#2A3553] relative z-30 hover:bg-[#0E121E] hover:cursor-pointer text-white py-3 px-8 rounded-lg shadow transition-all duration-200"
+          class="inline-block bg-[#2A3553] relative z-30 hover:bg-[#1c2336] hover:cursor-pointer text-white hover:text-[#ddd] py-3 px-8 rounded-lg shadow transition-all duration-300"
           >Zapoznaj się z ofertą</a
         >
       </div>

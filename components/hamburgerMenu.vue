@@ -10,7 +10,7 @@ function toggleMenu() {
 
 <template>
   <header
-    class="w-full h-16 sticky md:hidden flex justify-between px-2 items-center bg-[##1E2137] z-30"
+    class="w-full h-16 sticky md:hidden flex justify-between px-2 items-center bg-[#1E2137] z-50"
   >
     <div class="size-10"></div>
     <NuxtLink to="/" class="h-[80%]">

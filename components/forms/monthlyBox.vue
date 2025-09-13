@@ -28,6 +28,7 @@ onMounted(() => {
 <style>
 #bookero-plugin {
   background-color: rgba(255, 255, 255, 0.6);
+  max-width: 100vw;
   width: 50rem;
   border-radius: 1rem;
   display: flex;

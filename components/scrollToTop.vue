@@ -37,7 +37,7 @@ onUnmounted(() => {
   <button
     v-if="displayBtn"
     @click="handleScroll"
-    class="fixed bottom-8 right-4 bg-[#DECFA7] active:bg-[#CDB67A] hover:bg-[#CDB67A] hover:cursor-pointer size-[3rem] rounded-full transition duration-150 ease-in-out"
+    class="z-50 fixed bottom-8 right-4 bg-[#DECFA7] active:bg-[#CDB67A] hover:bg-[#CDB67A] hover:cursor-pointer size-[3rem] rounded-full transition duration-150 ease-in-out"
   >
     <i class="pi pi-arrow-up"></i>
   </button>
